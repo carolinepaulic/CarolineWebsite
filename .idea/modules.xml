@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/SkeletonAngularApp.iml" filepath="$PROJECT_DIR$/.idea/SkeletonAngularApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/CarolineWebsite.iml" filepath="$PROJECT_DIR$/.idea/CarolineWebsite.iml" />
     </modules>
   </component>
 </project>

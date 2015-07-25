@@ -1,4 +1,4 @@
-angular.module('skeleton-app.HomeModule', [])
+angular.module('caroline-website.HomeModule', [])
     .config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
         .state('home', {

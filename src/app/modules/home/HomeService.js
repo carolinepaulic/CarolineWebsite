@@ -6,6 +6,6 @@
     }
 
     angular
-        .module('skeleton-app.HomeModule')
+        .module('caroline-website.HomeModule')
         .service('HomeService', ['$http', HomeService]);
 })();

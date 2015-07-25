@@ -1,5 +1,5 @@
-angular.module('skeleton-app',
+angular.module('caroline-website',
     [
         'ui.router',
-        'skeleton-app.HomeModule'
+        'caroline-website.HomeModule'
     ]); /* Module names go in array as strings */

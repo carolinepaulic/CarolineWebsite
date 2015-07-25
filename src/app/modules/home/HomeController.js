@@ -4,6 +4,6 @@
     }
 
     angular
-        .module('skeleton-app.HomeModule')
+        .module('caroline-website.HomeModule')
         .controller('HomeController', ['$scope', 'HomeService', HomeController]);
 })();
