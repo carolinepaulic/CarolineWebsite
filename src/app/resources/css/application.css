@@ -1,0 +1,19 @@
+/* Header */
+.header {
+    background-color: grey;
+    color: palegreen;
+}
+
+.header h1 {
+    font-size: 6em;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.header .tagline {
+    font-style: italic;
+    color: lightskyblue;
+    margin-bottom: 0;
+    margin-top: 0;
+}
