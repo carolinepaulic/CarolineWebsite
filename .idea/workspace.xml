@@ -27,8 +27,8 @@
       <file leaf-file-name="application.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/resources/css/application.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="320" max-vertical-offset="945">
-              <caret line="36" column="23" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1110">
+              <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -44,11 +44,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HomeView.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="HomeView.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/modules/home/HomeView.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.9166665" vertical-offset="110" max-vertical-offset="705">
-              <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
+            <state vertical-scroll-proportion="0.43814433" vertical-offset="0" max-vertical-offset="705">
+              <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -66,10 +66,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Footer.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Footer.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/modules/footer/Footer.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.10309278" vertical-offset="0" max-vertical-offset="582">
+            <state vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="195">
               <caret line="4" column="52" selection-start-line="4" selection-start-column="52" selection-end-line="4" selection-end-column="52" />
               <folding />
             </state>
@@ -111,7 +111,6 @@
         <option value="$PROJECT_DIR$/src/app/resources/css/font-awesome.css" />
         <option value="$PROJECT_DIR$/src/app/modules/footer/FooterModule.js" />
         <option value="$PROJECT_DIR$/src/app/modules/footer/FooterController.js" />
-        <option value="$PROJECT_DIR$/src/app/resources/css/application.css" />
         <option value="$PROJECT_DIR$/src/app/modules/contact/EmailContact.html" />
         <option value="$PROJECT_DIR$/src/app/modules/contact/LinkedInContact.html" />
         <option value="$PROJECT_DIR$/src/app/modules/contact/GitHubContact.html" />
@@ -124,6 +123,7 @@
         <option value="$PROJECT_DIR$/src/app/modules/home/HomeView.html" />
         <option value="$PROJECT_DIR$/src/app/modules/resume/ResumeView.html" />
         <option value="$PROJECT_DIR$/src/app/modules/footer/Footer.html" />
+        <option value="$PROJECT_DIR$/src/app/resources/css/application.css" />
       </list>
     </option>
   </component>
@@ -415,7 +415,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="716" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -796,14 +796,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/resources/css/application.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="320" max-vertical-offset="945">
-          <caret line="36" column="23" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.125" vertical-offset="0" max-vertical-offset="495">
@@ -815,14 +807,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="165">
           <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/modules/home/HomeView.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.9166665" vertical-offset="110" max-vertical-offset="705">
-          <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -838,8 +822,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/modules/footer/Footer.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10309278" vertical-offset="0" max-vertical-offset="582">
+        <state vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="195">
           <caret line="4" column="52" selection-start-line="4" selection-start-column="52" selection-end-line="4" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/resources/css/application.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1110">
+          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/modules/home/HomeView.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43814433" vertical-offset="0" max-vertical-offset="705">
+          <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
           <folding />
         </state>
       </provider>

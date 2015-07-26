@@ -1,7 +1,7 @@
 /* Header */
 .header {
-    background-color: grey;
-    color: palegreen;
+    background-color: #737373;
+    color: #13ec8e;
 }
 
 .header h1 {
@@ -13,14 +13,14 @@
 
 .header .tagline {
     font-style: italic;
-    color: lightskyblue;
+    color: #36b6dd;
     margin-bottom: 0;
     margin-top: 0;
 }
 
 /* Body */
 .main-background {
-    background-color: #c9c9c9;
+    background-color: #737373;
 }
 
 .main-page {
@@ -28,8 +28,19 @@
     padding: 20px;
 }
 
-.contact {
+div a {
+    color: #36b6dd;
+}
 
+div a:hover {
+    color: #38879f;
+    padding-bottom: 2px;
+    border-bottom: 1px dotted #acd5e2;
+    text-decoration: none;
+}
+
+.footer div a:hover {
+    color: #acd5e2;
 }
 
 .contact h4 {
@@ -43,7 +54,7 @@
 
 /* Footer */
 .footer {
-    background-color: grey;
+    background-color: #737373;
     color: lightskyblue;
     padding: 7px;
 }
