@@ -4,7 +4,7 @@ a:hover {
 }
 
 .main-background {
-    background-color: #737373;
+    background-color: #cdf2fe;
 }
 
 .main-page {
@@ -74,6 +74,8 @@ div a {
     background-color: #737373;
     color: lightskyblue;
     padding: 7px;
+    height: 30px;
+    clear: left;
 }
 
 .footer span {
