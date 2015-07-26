@@ -1,7 +1,7 @@
 <div class="container-fluid footer">
-    <span class="glyphicon glyphicon-envelope"></span> carolinepaulic@gmail.com
-    <span class="fa fa-linkedin-square"></span> linkedinurlhere.linkedin.com
-    <span class="fa fa-github-square"></span> githuburl.github.com
-    <span class="glyphicon glyphicon-ice-lolly-tasted"></span> Have a fantastic {{getCurrentDate() | date: 'EEEE'}}!
-    <span class="glyphicon glyphicon-copyright-mark"></span> 2015 Caroline Paulic
+    <div data-ng-include="'modules/contact/EmailContact.html'"></div>
+    <div data-ng-include="'modules/contact/LinkedInContact.html'"></div>
+    <div data-ng-include="'modules/contact/GitHubContact.html'"></div>
+    <div><span class="glyphicon glyphicon-ice-lolly-tasted"></span> Have a fantastic {{getCurrentDate() | date: 'EEEE'}}!</div>
+    <div><span class="glyphicon glyphicon-copyright-mark"></span> 2015 Caroline Paulic</div>
 </div>

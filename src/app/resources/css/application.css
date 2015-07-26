@@ -28,6 +28,19 @@
     padding: 20px;
 }
 
+.contact {
+
+}
+
+.contact h4 {
+    border-bottom: 1px solid lightskyblue;
+    padding-bottom: 5px;
+}
+
+.contact div {
+    margin-bottom: 15px;
+}
+
 /* Footer */
 .footer {
     background-color: grey;
@@ -36,6 +49,10 @@
 }
 
 .footer span {
-    margin-left: 50px;
     margin-right: 5px;
+}
+
+.footer div {
+    display: inline;
+    margin-left: 50px;
 }
