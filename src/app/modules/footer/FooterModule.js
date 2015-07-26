@@ -1,0 +1,1 @@
+angular.module('caroline-website.FooterModule', []);

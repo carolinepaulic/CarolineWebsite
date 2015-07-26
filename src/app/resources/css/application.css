@@ -27,3 +27,15 @@
     background-color: #ebebeb;
     padding: 20px;
 }
+
+/* Footer */
+.footer {
+    background-color: grey;
+    color: lightskyblue;
+    padding: 7px;
+}
+
+.footer span {
+    margin-left: 50px;
+    margin-right: 5px;
+}

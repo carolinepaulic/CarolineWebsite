@@ -11,14 +11,18 @@
     <script src="modules/home/HomeModule.js"></script>
     <script src="modules/home/HomeService.js"></script>
     <script src="modules/home/HomeController.js"></script>
+    <script src="modules/footer/FooterModule.js"></script>
+    <script src="modules/footer/FooterController.js"></script>
     <script src="app.js"></script>
 
     <!-- CSS -->
     <link href="resources/css/application.css" rel="stylesheet" type="text/css">
     <link href="resources/css/bootstrap.min.css" rel="stylesheet">
+    <link href="resources/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body class="main-background">
     <div data-ng-include data-src="'modules/header/Header.html'"></div>
     <div data-ui-view></div>
+    <div data-ng-include data-src="'modules/footer/Footer.html'" data-ng-controller="FooterController"></div>
 </body>
 </html>
