@@ -2,6 +2,7 @@ angular.module('caroline-website',
     [
         'ui.router',
         'ngRoute',
+        'caroline-website.SidebarModule',
         'caroline-website.HomeModule',
         'caroline-website.PersonalModule',
         'caroline-website.ProfessionalModule',

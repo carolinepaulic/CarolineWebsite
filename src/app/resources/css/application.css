@@ -60,6 +60,11 @@ div a:hover {
 
 }
 
+.sidebar {
+    background-color: #cdf2fe;
+    padding: 15px;
+}
+
 /* Footer */
 .footer {
     background-color: #737373;
