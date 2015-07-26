@@ -1,9 +1,15 @@
 (function () {
-    function HomeController($scope, HomeService) {
-        $scope.hi = HomeService.getHomeText();
+    function HomeController($scope, $state) {
+        $scope.goToProfessionalPage = function() {
+            $state.go('professional');
+        };
+
+        $scope.goToPersonalPage = function() {
+            $state.go('personal');
+        };
     }
 
     angular
         .module('caroline-website.HomeModule')
-        .controller('HomeController', ['$scope', 'HomeService', HomeController]);
+        .controller('HomeController', ['$scope', '$state', HomeController]);
 })();
