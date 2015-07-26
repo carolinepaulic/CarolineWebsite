@@ -1,4 +1,8 @@
 /* Body */
+.contact a {
+    color: #36b6dd;
+}
+
 a:hover {
     cursor: pointer;
 }
@@ -7,13 +11,49 @@ a:hover {
     background-color: #cdf2fe;
 }
 
-.main-page {
-    background-color: #ebebeb;
-    padding: 20px;
+.main-page, .container-fluid.main-page, .container.main-page {
+    background-color: #737373;
+    color: white;
+    padding-left: 30px;
 }
 
-div a {
-    color: #36b6dd;
+.main-page h1 {
+    color: #43cb7e;
+}
+
+.main-page .nav-button {
+    float: left;
+}
+
+.panel.panel-nav {
+    border-color: #36b6dd;
+    display: inline;
+    float: left;
+    width: 40%;
+    margin: 40px 60px 40px 0;
+}
+
+.panel-nav > .panel-heading {
+    background-color: #43cb7e;
+    font-size: 1.5em;
+}
+
+.panel-nav > .panel-heading a {
+    color: #ffffff;
+    padding-bottom: 3px;
+}
+
+.panel-nav > .panel-heading > a:hover {
+    cursor: pointer;
+    color: #cdf2fe;
+    text-decoration: none;
+    border-bottom: 1px dotted #737373;
+}
+
+.panel-nav > .panel-body {
+    color: grey;
+    border-top: 1px solid #36b6dd;
+    font-size: 1.2em;
 }
 
 .contact a:hover, .footer a:hover {
