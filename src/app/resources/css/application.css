@@ -1,24 +1,8 @@
-/* Header */
-.header {
-    background-color: #737373;
-    color: #13ec8e;
-}
-
-.header h1 {
-    font-size: 6em;
-    margin-top: 10px;
-    margin-left: 20px;
-    margin-bottom: 10px;
-}
-
-.header .tagline {
-    font-style: italic;
-    color: #36b6dd;
-    margin-bottom: 0;
-    margin-top: 0;
-}
-
 /* Body */
+a:hover {
+    cursor: pointer;
+}
+
 .main-background {
     background-color: #737373;
 }
@@ -32,7 +16,7 @@ div a {
     color: #36b6dd;
 }
 
-div a:hover {
+.contact a:hover, .footer a:hover {
     color: #38879f;
     padding-bottom: 2px;
     border-bottom: 1px dotted #acd5e2;
@@ -43,7 +27,7 @@ div a:hover {
     color: #acd5e2;
 }
 
-.contact h4 {
+.sidebar h4 {
     border-bottom: 1px solid lightskyblue;
     padding-bottom: 5px;
 }
@@ -60,9 +44,29 @@ div a:hover {
 
 }
 
+/* Sidebar */
+.menu-item {
+    color: grey;
+    display: block;
+    line-height: 1.1;
+    margin-bottom: 15px;
+    padding: 10px 5px 10px 5px;
+    font-weight: bold;
+    border: 1px solid grey;
+    border-radius: 4px;
+}
+
+.menu-item:hover {
+    background-color: white;
+}
+
 .sidebar {
     background-color: #cdf2fe;
     padding: 15px;
+}
+
+.sidebar h2 {
+    margin-top: 0;
 }
 
 /* Footer */
