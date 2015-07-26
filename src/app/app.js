@@ -4,5 +4,6 @@ angular.module('caroline-website',
         'ngRoute',
         'caroline-website.HomeModule',
         'caroline-website.PersonalModule',
+        'caroline-website.ProfessionalModule',
         'caroline-website.FooterModule'
     ]);
