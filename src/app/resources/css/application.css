@@ -7,7 +7,7 @@
     font-size: 1.2em;
 }
 
-a:hover {
+a:hover, .sidebar h1:hover {
     cursor: pointer;
 }
 
@@ -74,8 +74,9 @@ a:hover {
 }
 
 .sidebar h4 {
-    border-bottom: 1px solid lightskyblue;
+    border-bottom: 1px solid #43cb7e;
     padding-bottom: 5px;
+    color: #737373;
 }
 
 .contact div {
@@ -87,16 +88,21 @@ a:hover {
 .menu-item {
     color: grey;
     display: block;
-    line-height: 1.1;
-    margin-bottom: 15px;
     padding: 10px 5px 10px 5px;
     font-weight: bold;
-    border: 1px solid grey;
     border-radius: 4px;
 }
 
+.menu-item span {
+    color: #43cb7e;
+}
+
 .menu-item:hover {
-    background-color: white;
+    background-color: #36b6dd;
+    color: #ffffff;
+    border-color: #43cb7e;
+    text-decoration: none;
+    font-style: italic;
 }
 
 .sidebar {
@@ -104,12 +110,17 @@ a:hover {
     padding: 15px;
 }
 
-.sidebar h2 {
+.sidebar h1 {
     margin-top: 0;
+    color: #737373;
+    margin-bottom: 5px;
+    margin-right: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #43cb7e;
 }
 
 .book-title {
-    color: black;
+    color: #737373;
     text-decoration: none;
 }
 
