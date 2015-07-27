@@ -4,7 +4,7 @@ angular.module('caroline-website',
         'ngRoute',
         'caroline-website.SidebarModule',
         'caroline-website.HomeModule',
-        'caroline-website.PersonalModule',
+        'caroline-website.ProjectModule',
         'caroline-website.ProfessionalModule',
         'caroline-website.FooterModule'
     ]);

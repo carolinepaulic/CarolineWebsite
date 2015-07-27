@@ -1,0 +1,17 @@
+<div class="container main-page">
+    <h1>My Projects</h1>
+    <h3>I have a big imagination and I'm always thinking of new things to create.</h3>
+    <p>I love spending my free time on creative projects. I'm really inspired by nature, music with a solid beat, and
+    confident people.</p>
+    <p>Next up: A simple machine learning program, a program using D3 to render data from a public REST API, and a cubic wall shelf.</p>
+    <h3>Filter by...</h3>
+    <button data-ng-repeat="filter in filters" class="btn btn-lg btn-filter" data-ng-click="filterBy(filter)"><span data-ng-class="filter.icon"></span> {{filter.name}}</button>
+    <div class="row">
+        <div data-ng-repeat="project in allProjects" class="project-listing col-xs-3">
+            <img data-ng-src="{{project.imagePath}}" style="float: left; margin-right: 10px;" height="100px" width="100px">
+            <h4>{{project.name}}</h4>
+            <p>{{project.dateRange}}</p>
+            <a class="small-link"><span class="glyphicon glyphicon-hand-right"></span> Details</a>
+        </div>
+    </div>
+</div>
