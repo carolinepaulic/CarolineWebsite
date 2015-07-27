@@ -33,8 +33,14 @@ a:hover {
     margin: 40px 60px 40px 0;
 }
 
+.panel.panel-nav.professional {
+    margin: 0;
+    width: 100%;
+}
+
 .panel-nav > .panel-heading {
     background-color: #43cb7e;
+    color: #ffffff;
     font-size: 1.5em;
 }
 

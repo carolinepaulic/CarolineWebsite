@@ -1,18 +1,49 @@
-<div class="container main-page">
-    <div class="row">
-        <div class="col-xs-6">
-            <h2 class="subsection-header">Experience</h2>
+<div class="container-fluid main-page">
+    <h1>Professional</h1>
+    <h3>I'm a full stack software developer working in Honolulu, Hawaii.</h3>
+    <br/>
+    <p>At work, we're building a web application used for financial record management. The front end is built
+        using AngularJS and Google Web Toolkit (GWT). The back end is built using JPA/EJB, and data is retrieved using
+        RESTful web services.</p>
+    <p>Although I'm capable of full stack development, my work is mainly focused on the front end. I have a good eye
+        for detail and design, and I pride myself on my ability to make a UI pixel-perfect. At work I've been focusing on
+        creating mockups and lightweight prototypes to demonstrate ideas to our management team and clients, and then
+        implementing these ideas within time and budget constraints using HTML, CSS, JavaScript, and the AngularJS framework.</p>
+
+    <div class="row" style="margin-top: 30px; margin-bottom: 30px;">
+        <div class="col-xs-4">
+            <div class="panel panel-nav professional">
+                <div class="panel-heading">
+                    <h4>Learn more about me</h4>
+                </div>
+                <div class="panel-body">
+                    <div data-ng-include="'modules/resume/ResumeView.html'"></div>
+                    <div data-ng-click="goToSoftwareProjectsPage()"><a><span class="glyphicon glyphicon-hand-right" style="margin-right: 5px; margin-top: 20px;"></span> View Projects</a></div>
+                </div>
+            </div>
         </div>
-        <div class="col-xs-6">
-            <h2 class="subsection-header">Interests</h2>
+        <div class="col-xs-4">
+            <div class="panel panel-nav professional">
+                <div class="panel-heading">
+                    <h4>I'm intrigued by...</h4>
+                </div>
+                <div class="panel-body">
+                    <b>artificial intelligence</b> and <b>usability research</b>. I love learning about how people tick
+                    on a subconscious level and then either trying to mimic that behavior with a computer, or catering a
+                    UI to fit that behavior.
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-6">
-            <h2 class="subsection-header">Projects</h2>
-        </div>
-        <div class="col-xs-6">
-            <h2 class="subsection-header">Resume</h2>
+        <div class="col-xs-4">
+            <div class="panel panel-nav professional">
+                <div class="panel-heading">
+                    <h4>My goal is to...</h4>
+                </div>
+                <div class="panel-body">
+                    find a career that fascinates me, learn as much as I can in the mean time, and <b>be the best software developer
+                    that I can be!</b>
+                </div>
+            </div>
         </div>
     </div>
 </div>
