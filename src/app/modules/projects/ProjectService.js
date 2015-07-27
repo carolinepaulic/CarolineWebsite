@@ -2,18 +2,33 @@
     function ProjectService() {
         this.projectImageDirectory = "resources/images/projects/";
 
+        this.getProjectWithId = function(projectId) {
+            var projects = this.getAllProjects();
+            var projectToReturn = null;
+            angular.forEach(projects, function(project) {
+                if (project.id == projectId) {
+                    projectToReturn = project;
+                }
+            });
+
+            return projectToReturn;
+        };
+
         this.getAllProjects = function() {
             return [
                 {
+                    id: 3,
                     name: "This Website",
                     dateRange: "Started July 2015",
                     tags: ["software"]
                 },
                 {
+                    id: 2,
                     name: "Wedding Cake",
                     dateRange: "N/A"
                 },
                 {
+                    id: 1,
                     name: "Striped Curtains",
                     dateRange: "April 2014 - Dec 2014",
                     imagePath: this.projectImageDirectory + "StripedCurtains.jpg",

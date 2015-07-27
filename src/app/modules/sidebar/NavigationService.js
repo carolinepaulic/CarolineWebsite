@@ -8,6 +8,10 @@
             $state.go('allProjects');
         };
 
+        this.goToSingleProjectPage = function(projectId) {
+            $state.go('project/' + projectId);
+        };
+
         this.goToProfessionalPage = function() {
             $state.go('professional');
         };

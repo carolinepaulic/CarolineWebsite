@@ -1,5 +1,5 @@
 (function() {
-    function ProjectController($scope, ProjectService) {
+    function AllProjectsController($scope, ProjectService, NavigationService) {
         $scope.filters = ProjectService.getProjectFilters();
         $scope.allProjects = ProjectService.getAllProjects();
 
@@ -9,10 +9,14 @@
             });
 
             filterBy.isSelected = true;
-        }
+        };
+
+        $scope.goToProjectPage = function(project) {
+            NavigationService.goToSingleProjectPage(project.id);
+        };
     }
 
     angular
         .module('caroline-website.ProjectModule')
-        .controller('ProjectController', ['$scope', 'ProjectService', ProjectController])
+        .controller('AllProjectsController', ['$scope', 'ProjectService', 'NavigationService', AllProjectsController])
 })();
