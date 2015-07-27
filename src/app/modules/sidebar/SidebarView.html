@@ -1,7 +1,7 @@
-<div class="sidebar">
-    <h2>Caroline Paulic</h2>
-    <a class="menu-item">Projects</a>
-    <a class="menu-item">Professional</a>
+<div class="sidebar" data-ng-controller="SidebarController">
+    <h2 data-ng-click="goHome()">Caroline Paulic</h2>
+    <a class="menu-item" data-ng-click="goToAllProjectsPage()">Projects</a>
+    <a class="menu-item" data-ng-click="goToProfessionalPage()">Professional</a>
     <div class="contact">
         <h4>Contact Me</h4>
         <div data-ng-include="'modules/contact/EmailContact.html'"></div>
