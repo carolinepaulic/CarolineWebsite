@@ -7,7 +7,7 @@
     <h3>Filter by...</h3>
     <button data-ng-repeat="filter in filters" class="btn btn-lg btn-filter" data-ng-click="filterBy(filter)"><span data-ng-class="filter.icon"></span> {{filter.name}}</button>
     <div class="row">
-        <div data-ng-repeat="project in allProjects" class="project-listing col-xs-3">
+        <div data-ng-repeat="project in allProjects" data-ng-click="goToProjectPage(project)" class="project-listing col-xs-3">
             <img data-ng-src="{{project.imagePath}}" style="float: left; margin-right: 10px;" height="100px" width="100px">
             <h4>{{project.name}}</h4>
             <p>{{project.dateRange}}</p>

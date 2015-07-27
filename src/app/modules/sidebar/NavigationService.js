@@ -9,7 +9,7 @@
         };
 
         this.goToSingleProjectPage = function(projectId) {
-            $state.go('project/' + projectId);
+            $state.go('project', {'projectId': projectId});
         };
 
         this.goToProfessionalPage = function() {

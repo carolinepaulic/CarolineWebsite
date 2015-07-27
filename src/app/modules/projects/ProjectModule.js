@@ -6,7 +6,7 @@ angular.module('caroline-website.ProjectModule', [])
                 templateUrl: 'modules/projects/AllProjectsView.html',
                 controller: 'AllProjectsController'
             })
-            .state('/project/:projectId', {
+            .state('project', {
                 url: '/project/:projectId',
                 templateUrl: 'modules/projects/SingleProjectView.html',
                 controller: 'SingleProjectController'

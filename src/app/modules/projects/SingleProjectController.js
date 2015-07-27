@@ -16,6 +16,7 @@
         };
 
         function load() {
+            console.info($stateParams);
             $scope.project = ProjectService.getProjectWithId($stateParams.projectId);
         }
 
