@@ -21,9 +21,16 @@
                     name: "This Website",
                     dateRange: "Started July 2015",
                     imagePath: "",
-                    about: "",
-                    challenges: "",
-                    thingsLearned: "",
+                    about: "I really wanted to make a personal website to get some practice with building an application " +
+                           "from scratch and to have a place to showcase my software projects to prospective employers. Plus, " +
+                           "it sounded like fun. Tech specs: Angular, HTML, CSS, JavaScript, BootStrap, D3 charting",
+                    challenges: "This was my first time building a project from scratch by myself, so there were a few bumps " +
+                                "along the way coding-wise. I also had a hard time deciding which information to include, and what " +
+                                "to keep to myself.",
+                    thingsLearned: ["How to build an Angular application from scratch",
+                                    "A lot of random things about HTML, CSS, and JavaScript",
+                                    "How to deploy a web application using a hosting website",
+                                    "Writing an entire website full of information about yourself is harder than it sounds"],
                     tags: ["software"]
                 },
                 {
