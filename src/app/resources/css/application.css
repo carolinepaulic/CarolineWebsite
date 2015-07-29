@@ -147,6 +147,12 @@ a:hover, .sidebar h1:hover {
     margin: 10px;
 }
 
+.caption {
+    color: #cdf2fe;
+    font-style: italic;
+    margin-bottom: 25px;
+}
+
 /* Footer */
 .footer {
     background-color: #737373;
