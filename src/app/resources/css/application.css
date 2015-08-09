@@ -1,4 +1,8 @@
 /* Body */
+body .main-page, body .sidebar {
+    font-family: "Lora", serif;
+}
+
 .contact a, .project-listing a {
     color: #36b6dd;
 }
@@ -23,10 +27,29 @@ a:hover, .sidebar h1:hover {
 
 .main-page h1 {
     color: #43cb7e;
+    font-family: 'Pacifico', cursive;
+    font-size: 4em;
+    margin-bottom: 25px;
+}
+
+.main-page h2 {
+    font-family: 'Handlee', serif;
+    font-size: 2.4em;
+    margin-bottom: 15px;
+}
+
+.main-page p {
+    line-height: 1.7;
+    font-size: 1.3em;
+    margin-bottom: 25px;
 }
 
 .main-page a {
-    color: #36b6dd;
+    color: #cdf2fe;
+}
+
+.main-page .emphasis {
+    color: #43cb7e;
 }
 
 .panel.panel-nav {
@@ -34,7 +57,7 @@ a:hover, .sidebar h1:hover {
     display: inline;
     float: left;
     width: 40%;
-    margin: 40px 60px 40px 0;
+    margin: 0 60px 40px 0;
 }
 
 .panel.panel-nav.professional {
