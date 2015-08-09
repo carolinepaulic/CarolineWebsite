@@ -25,6 +25,10 @@ a:hover, .sidebar h1:hover {
     color: #43cb7e;
 }
 
+.main-page a {
+    color: #36b6dd;
+}
+
 .panel.panel-nav {
     border-color: #36b6dd;
     display: inline;
@@ -62,11 +66,15 @@ a:hover, .sidebar h1:hover {
     font-size: 1.2em;
 }
 
-.contact a:hover, .footer a:hover, .book-title:hover, .small-link:hover {
+.contact a:hover, .footer a:hover, .book-title:hover, .small-link:hover, .main-page a:hover {
     color: #38879f;
     padding-bottom: 2px;
     border-bottom: 1px dotted #acd5e2;
     text-decoration: none;
+}
+
+.main-page a:hover {
+    color: #acd5e2;
 }
 
 .footer div a:hover {
