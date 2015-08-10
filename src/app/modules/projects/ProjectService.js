@@ -25,6 +25,7 @@
                     imagePath: "",
                     about: "My personal website that I built using HTML, CSS, BootStrap, JavaScript, and AngularJS. This project is " +
                     "still in progress.",
+                    githubUrl: "https://github.com/carolinepaulic/CarolineWebsite",
                     goals: [
                         {
                             name: "Build a single page application from scratch",
