@@ -25,7 +25,7 @@
     </div>
     <!--<h3>Filter by...</h3>
     <button data-ng-repeat="filter in filters" class="btn btn-lg btn-filter" data-ng-click="filterBy()"><span data-ng-class="filter.icon"></span> {{filter.name}}</button>-->
-    <div class="row">
+    <div class="row" style="margin-top: 30px;">
         <div data-ng-repeat="project in allProjects" data-ng-show="project.isShowing" data-ng-click="goToProjectPage(project)" class="project-listing col-xs-4">
             <img data-ng-src="{{project.thumbnailPath}}" style="float: left; margin-right: 10px;" height="100px" width="100px">
             <h4 style="font-size: 1.4em;">{{project.name}}</h4>
