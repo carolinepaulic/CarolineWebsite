@@ -29,8 +29,8 @@
         <div data-ng-repeat="project in allProjects" data-ng-show="project.isShowing" data-ng-click="goToProjectPage(project)" class="project-listing col-xs-4">
             <img data-ng-src="{{project.thumbnailPath}}" style="float: left; margin-right: 10px;" height="100px" width="100px">
             <h4 style="font-size: 1.4em;">{{project.name}}</h4>
-            <p>{{project.dateRange}}</p>
-            <a class="small-link"><span class="glyphicon glyphicon-hand-right"></span> Details</a>
+            <h4 style="color: #666666;">{{project.dateRange}}</h4>
+            <a style="color: #36b6dd;"><span class="glyphicon glyphicon-hand-right"></span> Details</a>
         </div>
     </div>
 </div>
