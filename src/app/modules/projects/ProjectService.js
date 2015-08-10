@@ -19,7 +19,7 @@
                 {
                     id: 1,
                     name: "This Website",
-                    tagline: "My own corner of the internet",
+                    tagline: "",
                     dateRange: "Started July 2015",
                     thumbnailPath: this.projectImageDirectory + "PersonalWebsiteThumbnail.png",
                     imagePath: "",
@@ -47,7 +47,7 @@
                             complete: false
                         },
                         {
-                            name: "Showcase my portfolio",
+                            name: "Showcase my software portfolio",
                             complete: true
                         },
                         {
