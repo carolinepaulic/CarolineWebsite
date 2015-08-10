@@ -5,7 +5,6 @@
         };
 
         $scope.filterBy = function(filterBy) {
-            console.info("here");
 /*            angular.forEach($scope.filters, function(filter) {
                 filter.iSSelected = false;
             });

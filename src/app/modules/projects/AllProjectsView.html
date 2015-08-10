@@ -3,9 +3,8 @@
     <h2>I have a big imagination and I'm always thinking of new things to create.</h2>
     <div class="row">
         <div class="col-xs-7">
-            <p>I love working on creative projects, and I usually have a few different things going on at once. My projects
-                range from software development to sewing, with a lot in between. Click on a project to see more
-                details, including the project goals, challenges, and results.</p>
+            <p>I love working on personal projects, and I usually have a few going on at once. My projects
+                range from software development to sewing, with a lot in between. Click on a project to learn more!</p>
             <p class="emphasis"><span class="glyphicon glyphicon-alert" style="margin-right: 5px;"></span> This page is under construction!
                 I'm in the process of adding in all of my projects, so check back in a couple of days to
             see what's new! <span style="font-style: italic;">[Last updated 8/9/15]</span></p>
@@ -27,9 +26,9 @@
     <!--<h3>Filter by...</h3>
     <button data-ng-repeat="filter in filters" class="btn btn-lg btn-filter" data-ng-click="filterBy()"><span data-ng-class="filter.icon"></span> {{filter.name}}</button>-->
     <div class="row">
-        <div data-ng-repeat="project in allProjects" data-ng-show="project.isShowing" data-ng-click="goToProjectPage(project)" class="project-listing col-xs-3">
-            <img data-ng-src="{{project.imagePath}}" style="float: left; margin-right: 10px;" height="100px" width="100px">
-            <h4>{{project.name}}</h4>
+        <div data-ng-repeat="project in allProjects" data-ng-show="project.isShowing" data-ng-click="goToProjectPage(project)" class="project-listing col-xs-4">
+            <img data-ng-src="{{project.thumbnailPath}}" style="float: left; margin-right: 10px;" height="100px" width="100px">
+            <h4 style="font-size: 1.4em;">{{project.name}}</h4>
             <p>{{project.dateRange}}</p>
             <a class="small-link"><span class="glyphicon glyphicon-hand-right"></span> Details</a>
         </div>

@@ -20,6 +20,7 @@
                     id: 1,
                     name: "This Website",
                     dateRange: "Started July 2015",
+                    thumbnailPath: this.projectImageDirectory + "PersonalWebsiteThumbnail.png",
                     imagePath: "",
                     about: "I really wanted to make a personal website to get some practice with building an application " +
                            "from scratch and to have a place to showcase my software projects to prospective employers. Plus, " +
@@ -32,7 +33,7 @@
                                     "How to deploy a web application using a hosting website",
                                     "Writing an entire website full of information about yourself is harder than it sounds"],
                     tags: ["software"]
-                },
+                }/*,
                 {
                     id: 2,
                     name: "Hiking",
@@ -104,7 +105,7 @@
                     ],
                     tags: ["health", "exercise", "hiking", "kuliouou"]
                 }
-/*                {
+                {
                     id: 11111111,
                     name: "Wedding Cake",
                     dateRange: "N/A"
