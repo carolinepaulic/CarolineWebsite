@@ -3,6 +3,10 @@ body .main-page, body .sidebar {
     font-family: "Lora", serif;
 }
 
+ul {
+    padding-left: 7px;
+}
+
 .contact a, .project-listing a {
     color: #36b6dd;
 }
@@ -23,6 +27,7 @@ a:hover, .sidebar h1:hover {
     background-color: #737373;
     color: white;
     padding-left: 30px;
+    padding-bottom: 50px;
 }
 
 .main-page h1 {
@@ -38,10 +43,17 @@ a:hover, .sidebar h1:hover {
     margin-bottom: 15px;
 }
 
-.main-page p {
+.main-page p, .main-page li {
     line-height: 1.7;
     font-size: 1.3em;
+}
+
+.main-page p {
     margin-bottom: 25px;
+}
+
+.main-page li {
+    margin-bottom: 10px;
 }
 
 .main-page a {
@@ -87,6 +99,10 @@ a:hover, .sidebar h1:hover {
     color: grey;
     border-top: 1px solid #36b6dd;
     font-size: 1.2em;
+}
+
+.panel-nav > .panel-body a {
+    color: #36b6dd;
 }
 
 .contact a:hover, .footer a:hover, .book-title:hover, .small-link:hover, .main-page a:hover {
