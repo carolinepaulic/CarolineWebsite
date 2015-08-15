@@ -5,6 +5,7 @@ angular.module('caroline-website',
         'caroline-website.SidebarModule',
         'caroline-website.HomeModule',
         'caroline-website.ProjectModule',
+        'caroline-website.ReadingModule',
         'caroline-website.ProfessionalModule',
         'caroline-website.FooterModule'
     ]);
