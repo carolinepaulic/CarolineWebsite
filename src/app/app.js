@@ -1,6 +1,7 @@
 angular.module('caroline-website',
     [
         'ui.router',
+        'ui.bootstrap',
         'ngRoute',
         'caroline-website.SidebarModule',
         'caroline-website.HomeModule',

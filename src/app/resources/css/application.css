@@ -126,6 +126,17 @@ a:hover, .sidebar h1:hover {
     color: #737373;
 }
 
+.reading .carousel-indicators {
+    display: none;
+}
+
+.reading .carousel-control.left, .reading .carousel-control.right {
+    background-image: none;
+    color: #737373;
+    bottom: auto;
+    top: 70px;
+}
+
 .contact div {
     margin-bottom: 15px;
 }
