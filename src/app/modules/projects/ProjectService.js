@@ -154,6 +154,40 @@
                  thingsLearned: "Thai silk is super delicate and it WILL get threads all over your house, no matter how hard you try.",
                  tags: ["crafts", "sewing", "home"]
                  }*/
+                /*
+                {
+                 id: 3,
+                 name: "D3 Charting",
+                 tagline: "",
+                 dateRange: "Started August 2015",
+                 thumbnailPath: this.projectImageDirectory + "D3ChartingThumbnail.png",
+                 imagePath: "",
+                 about: "A little app that I made to learn how to use the D3.js charting library. This project is " +
+                 "still in progress.",
+                 githubUrl: "https://github.com/carolinepaulic/D3Charting",
+                 goals: [
+                 {
+                 name: "Learn how to use D3.js to build simple graphs such as bar charts, line graphs,
+                 scatter plots, and pie charts.",
+                 complete: false
+                 },
+                 {
+                 name: "Learn how to use D3.js to build more complex graphs.",
+                 complete: false
+                 }, {
+                 name: "Use a public REST endpoint to grab data to populate a graph made with D3.js.",
+                 complete: false
+
+                 },
+                 {
+                 name: "Learn how to update a graph in real time when new data is available.",
+                 complete: false
+                 }
+                 ],
+                 challenges: "None yet!",
+                 thingsLearned: ["Nothing yet :("],
+                 tags: ["software"]
+                 }*/
             ]
         };
 
