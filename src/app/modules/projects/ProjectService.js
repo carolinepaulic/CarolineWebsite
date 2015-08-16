@@ -182,6 +182,10 @@
                  {
                  name: "Learn how to update a graph in real time when new data is available.",
                  complete: false
+                 },
+                 {
+                 name: "Learn how to integrate D3.js with AngularJS.",
+                 complete: false
                  }
                  ],
                  challenges: "None yet!",
