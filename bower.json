@@ -1,0 +1,28 @@
+{
+  "name": "caroline-website",
+  "version": "1.0.0",
+  "homepage": "https://github.com/carolinepaulic/CarolineWebsite",
+  "authors": [
+    "Caroline Paulic <caroinepaulic@gmail.com>"
+  ],
+  "description": "My personal website",
+  "main": "app.js",
+  "keywords": [
+    "website"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.3",
+    "bootstrap": "~3.3.5",
+    "ui-router": "~0.2.15",
+    "angular-bootstrap": "~0.13.3",
+    "angular-route": "~1.4.4"
+  }
+}
