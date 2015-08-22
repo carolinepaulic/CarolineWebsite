@@ -1,5 +1,6 @@
 var gulp = require('gulp'),
     concat = require('gulp-concat'),
+    ngannotate = require('gulp-ng-annotate'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
     del = require('del'),
@@ -26,6 +27,7 @@ gulp.task('concat-minify-obfuscate', function() {
         .pipe(concat(pkg.name + '.js'))
         .pipe(gulp.dest(appPath))
         .pipe(rename({suffix: '.min'}))
+        .pipe(ngannotate())
         .pipe(uglify())
         .pipe(gulp.dest('dist/'));
 });
