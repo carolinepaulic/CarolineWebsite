@@ -8,9 +8,9 @@ var gulp = require('gulp'),
     del = require('del'),
     livereload = require('gulp-livereload'),
     pkg = require('./package.json');
-var appPath = 'src/app/';
-var resourcesPath = appPath + 'resources/';
-var distPath = 'dist/';
+var appPath = 'src/app/',
+    resourcesPath = appPath + 'resources/',
+    distPath = 'dist/';
 
 gulp.task('clean-src', function(callback) {
     del([appPath + pkg.name +  '.js', appPath + pkg.name + '.min.js'], callback);
@@ -47,7 +47,7 @@ gulp.task('process-index', function() {
         .pipe(gulp.dest(distPath + appPath));
 });
 
-gulp.task('copy-to-dist', function() {
+gulp.task('copy-to-dist', ['process-index'], function() {
     gulp.src([appPath + 'modules/**/*.html'])
         .pipe(gulp.dest(distPath + appPath + 'modules/'));
     gulp.src([resourcesPath + 'css/*.min.css'])
@@ -75,5 +75,5 @@ gulp.task('dev', ['clean-src'], function() {
 });
 
 gulp.task('prod', ['clean-src', 'clean-dist'], function() {
-    gulp.start('js-minify-obfuscate', 'css-minify', 'process-index', 'copy-to-dist');
+    gulp.start('js-minify-obfuscate', 'css-minify', 'copy-to-dist');
 });

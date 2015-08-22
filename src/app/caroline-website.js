@@ -11,15 +11,6 @@ angular.module('caroline-website.HomeModule', [])
         $urlRouterProvider.when('', '/home');
         $urlRouterProvider.when('/', '/home');
     });
-angular.module('caroline-website.ProfessionalModule', [])
-    .config(function($stateProvider) {
-        $stateProvider
-            .state('professional', {
-                url: '/professional',
-                templateUrl: 'modules/professional/ProfessionalView.html',
-                controller: 'ProfessionalController'
-            });
-    });
 angular.module('caroline-website.ProjectModule', [])
     .config(function($stateProvider) {
         $stateProvider
@@ -32,6 +23,15 @@ angular.module('caroline-website.ProjectModule', [])
                 url: '/project/:projectId',
                 templateUrl: 'modules/projects/SingleProjectView.html',
                 controller: 'SingleProjectController'
+            });
+    });
+angular.module('caroline-website.ProfessionalModule', [])
+    .config(function($stateProvider) {
+        $stateProvider
+            .state('professional', {
+                url: '/professional',
+                templateUrl: 'modules/professional/ProfessionalView.html',
+                controller: 'ProfessionalController'
             });
     });
 angular.module('caroline-website.ReadingModule', []);
@@ -73,17 +73,6 @@ angular.module('caroline-website.SidebarModule', []);
     angular
         .module('caroline-website.HomeModule')
         .service('HomeService', ['$http', HomeService]);
-})();
-(function() {
-    function ProfessionalController($scope, NavigationService) {
-        $scope.goToSoftwareProjectsPage = function() {
-            NavigationService.goToAllProjectsPage();
-        };
-    }
-
-    angular
-        .module('caroline-website.ProfessionalModule')
-        .controller('ProfessionalController', ['$scope', 'NavigationService', ProfessionalController])
 })();
 (function() {
     function AllProjectsController($scope, ProjectService, NavigationService) {
@@ -395,6 +384,17 @@ angular.module('caroline-website.SidebarModule', []);
     angular
         .module('caroline-website.ProjectModule')
         .controller('SingleProjectController', ['$scope', '$stateParams', 'ProjectService', 'NavigationService', SingleProjectController])
+})();
+(function() {
+    function ProfessionalController($scope, NavigationService) {
+        $scope.goToSoftwareProjectsPage = function() {
+            NavigationService.goToAllProjectsPage();
+        };
+    }
+
+    angular
+        .module('caroline-website.ProfessionalModule')
+        .controller('ProfessionalController', ['$scope', 'NavigationService', ProfessionalController])
 })();
 (function() {
     function CurrentlyReadingController($scope, ReadingService) {
