@@ -4,6 +4,7 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     cssmin = require('gulp-cssmin'),
     rename = require('gulp-rename'),
+    processhtml = require('gulp-processhtml'),
     del = require('del'),
     pkg = require('./package.json');
 var appPath = 'src/app/';
@@ -39,11 +40,15 @@ gulp.task('css-minify', function() {
         .pipe(gulp.dest(distPath + resourcesPath + 'css/'));
 });
 
+gulp.task('process-index', function() {
+    return gulp.src([appPath + 'index.html'])
+        .pipe(processhtml())
+        .pipe(gulp.dest(distPath + appPath));
+});
+
 gulp.task('copy-to-dist', function() {
     gulp.src([appPath + 'modules/**/*.html'])
         .pipe(gulp.dest(distPath + appPath + 'modules/'));
-    gulp.src([appPath + 'index.html'])
-        .pipe(gulp.dest(distPath + appPath));
     gulp.src([resourcesPath + 'css/*.min.css'])
         .pipe(gulp.dest(distPath + resourcesPath + 'css/'));
     gulp.src(['bower_components/**/*.min.js'])
@@ -63,5 +68,5 @@ gulp.task('dev', ['clean-src'], function() {
 });
 
 gulp.task('prod', ['clean-src', 'clean-dist'], function() {
-    gulp.start('js-minify-obfuscate', 'css-minify', 'copy-to-dist');
+    gulp.start('js-minify-obfuscate', 'css-minify', 'process-index', 'copy-to-dist');
 });
