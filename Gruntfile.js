@@ -14,25 +14,25 @@ module.exports = function(grunt) {
         },
         concat: {
             options: {
-                separator: '\n\r' //Separator that goes between files in result
+                separator: '\n\r'
             },
             dist: {
                 src: [appPath + 'modules/**/*Module.js',
                       appPath + 'modules/**/*.js',
-                      appPath + 'app.js'], //Source js to read from
-                dest: appPath + '<%= pkg.name %>.js' //Where to put the concatenated result
+                      appPath + 'app.js'],
+                dest: appPath + '<%= pkg.name %>.js'
             }
         },
         ngmin: {
             dist: {
                 src: ['<%= concat.dist.dest %>'],
-                dest: '<%= concat.dist.dest %>' // path to generated files
+                dest: '<%= concat.dist.dest %>'
             }
         },
         uglify: {
             options: {
-                banner: '/* <%= pkg.name %> <%= grunt.template.today("mm-dd-yyyy") %> */\n', //Goes at the top of the resulting file
-                mangle: true //Obfuscate
+                banner: '/* <%= pkg.name %> <%= grunt.template.today("mm-dd-yyyy") %> */\n',
+                mangle: true
             },
             dist: {
                 src: '<%= ngmin.dist.dest %>',
@@ -67,7 +67,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-copy');
 
-    grunt.registerTask('default', ['concat', 'uglify']);
-    grunt.registerTask('dev', ['clean:src', 'concat', 'ngmin', 'uglify']);
-    grunt.registerTask('prod', ['clean', 'concat', 'ngmin', 'uglify', 'copy'])
+    grunt.registerTask('minify-obfuscate', ['concat', 'ngmin', 'uglify']);
+    grunt.registerTask('dev', ['clean:src', 'minify-obfuscate']);
+    grunt.registerTask('prod', ['clean', 'minify-obfuscate', 'copy']);
+    grunt.registerTask('default', 'dev');
 };
