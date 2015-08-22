@@ -14,6 +14,7 @@
     "grunt-contrib-concat": "^0.5.1",
     "grunt-contrib-copy": "^0.8.1",
     "grunt-contrib-uglify": "^0.9.1",
+    "grunt-ngmin": "0.0.3",
     "grunt-obfuscator": "^0.1.0",
     "uglify-js": "^2.4.24"
   },

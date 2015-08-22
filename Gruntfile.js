@@ -4,24 +4,38 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        clean: ['dist/**/*', appPath + '<%= pkg.name %>.js', appPath + '<%= pkg.name =>.min.js'],
+        clean: {
+            src: {
+                src: [appPath + '<%= pkg.name %>.js', appPath + '<%= pkg.name =>.min.js']
+            },
+            dist: {
+                src: ['dist/**/*']
+            }
+        },
         concat: {
             options: {
                 separator: '\n\r' //Separator that goes between files in result
             },
             dist: {
-                src: ['src/**/*Module.js',
-                      'src/**/*.js'], //Source js to read from
+                src: [appPath + 'modules/**/*Module.js',
+                      appPath + 'modules/**/*.js',
+                      appPath + 'app.js'], //Source js to read from
                 dest: appPath + '<%= pkg.name %>.js' //Where to put the concatenated result
+            }
+        },
+        ngmin: {
+            dist: {
+                src: ['<%= concat.dist.dest %>'],
+                dest: '<%= concat.dist.dest %>' // path to generated files
             }
         },
         uglify: {
             options: {
                 banner: '/* <%= pkg.name %> <%= grunt.template.today("mm-dd-yyyy") %> */\n', //Goes at the top of the resulting file
-                mangle: true
+                mangle: true //Obfuscate
             },
             dist: {
-                src: '<%= concat.dist.dest %>',
+                src: '<%= ngmin.dist.dest %>',
                 dest: appPath + '<%= pkg.name %>.min.js'
             }
         },
@@ -49,9 +63,11 @@ module.exports = function(grunt) {
 
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-ngmin');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-copy');
 
     grunt.registerTask('default', ['concat', 'uglify']);
-    grunt.registerTask('dev', ['clean', 'concat', 'uglify', 'copy']);
+    grunt.registerTask('dev', ['clean:src', 'concat', 'ngmin', 'uglify']);
+    grunt.registerTask('prod', ['clean', 'concat', 'ngmin', 'uglify', 'copy'])
 };
