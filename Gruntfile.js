@@ -39,6 +39,16 @@ module.exports = function(grunt) {
                 dest: appPath + '<%= pkg.name %>.min.js'
             }
         },
+        cssmin: {
+            dist: {
+                files: [{
+                    expand: true,
+                    src: [resourcesPath + 'css/application.css'],
+                    dest: '',
+                    ext: '.min.css'
+                }]
+            }
+        },
         copy: {
             main: {
                 files: [{
@@ -48,7 +58,6 @@ module.exports = function(grunt) {
                         appPath + 'index.html',
                         appPath + 'modules/**/*.html',
                         resourcesPath + 'css/*.min.css',
-                        resourcesPath + 'css/application.css',
                         resourcesPath + 'documents/*',
                         resourcesPath + 'fonts/*',
                         resourcesPath + 'images/*',
@@ -65,9 +74,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-ngmin');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-copy');
 
-    grunt.registerTask('minify-obfuscate', ['concat', 'ngmin', 'uglify']);
+    grunt.registerTask('minify-obfuscate', ['concat', 'ngmin', 'uglify', 'cssmin']);
     grunt.registerTask('dev', ['clean:src', 'minify-obfuscate']);
     grunt.registerTask('prod', ['clean', 'minify-obfuscate', 'copy']);
     grunt.registerTask('default', 'dev');
