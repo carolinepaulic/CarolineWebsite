@@ -6,6 +6,7 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     processhtml = require('gulp-processhtml'),
     del = require('del'),
+    livereload = require('gulp-livereload'),
     pkg = require('./package.json');
 var appPath = 'src/app/';
 var resourcesPath = appPath + 'resources/';
@@ -59,6 +60,12 @@ gulp.task('copy-to-dist', function() {
         .pipe(gulp.dest(distPath + resourcesPath + 'fonts/'));
     gulp.src([resourcesPath + 'images/**/*'])
         .pipe(gulp.dest(distPath + resourcesPath + 'images/'));
+});
+
+gulp.task('watch', function() {
+    livereload.listen();
+    gulp.watch([appPath + 'modules/**', resourcesPath, appPath + 'app.js', appPath + 'index.html'], ['dev']);
+    gulp.watch([appPath + pkg.name + '.js']).on('change', livereload.changed);
 });
 
 
