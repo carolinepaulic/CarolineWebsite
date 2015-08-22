@@ -25,3 +25,7 @@ gulp.task('scripts', function() {
 gulp.task('dev', ['clean-src'], function() {
     gulp.start('scripts');
 });
+
+gulp.task('prod', ['clean-src', 'clean-dist'], function() {
+    gulp.start('scripts');
+});
