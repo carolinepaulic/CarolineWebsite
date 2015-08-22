@@ -1,0 +1,18 @@
+<div class="main-page container-fluid" style="padding-top: 20px; padding-bottom: 30px;">
+    <h1 data-ng-bind="project.name"></h1>
+    <h2 >{{project.tagline}} {{project.dateRange}}</h2>
+    <img data-ng-src="{{project.imagePath}}" width="900px;" style="margin-bottom: 10px; margin-top: 25px;">
+    <p class="caption" data-ng-bind="project.imageCaption"></p>
+    <p data-ng-bind="project.about"></p>
+    <p data-ng-show="project.githubUrl && project.githubUrl.length > 0"><a data-ng-href="{{project.githubUrl}}"><span class="fa fa-github fa-lg" style="margin-right: 5px;"></span>{{project.githubUrl}}</a></p>
+    <h2 data-ng-show="project.goals && project.goals.length > 0" style="margin-top: 50px;">Goals</h2>
+    <ul style="list-style-type: none;">
+        <li data-ng-repeat="goal in project.goals"><span data-ng-show="goal.complete" class="glyphicon glyphicon-check" style="color: #43cb7e; margin-right: 5px;"></span><span data-ng-show="!goal.complete" class="glyphicon glyphicon-unchecked" style="margin-right: 5px;"></span>{{goal.name}}</li>
+    </ul>
+    <h2 data-ng-show="project.challenges && project.challenges.length > 0" style="margin-top: 50px;">Challenges</h2>
+    <p data-ng-bind="project.challenges"></p>
+    <h2 data-ng-show="project.thingsLearned && project.thingsLearned.length > 0" style="margin-top: 50px;">What I Learned</h2>
+    <ol style="padding-left: 20px;">
+        <li data-ng-repeat="thingLearned in project.thingsLearned" data-ng-bind="thingLearned"></li>
+    </ol>
+</div>
