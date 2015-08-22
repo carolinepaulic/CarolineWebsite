@@ -85,7 +85,18 @@ module.exports = function(grunt) {
                     }
                 }]
             }
-
+        },
+        watch: {
+            scripts: {
+                options: {
+                    livereload: true
+                },
+                files: [appPath + 'modules/**',
+                        resourcesPath,
+                        appPath + 'app.js',
+                        appPath + 'index.html'],
+                tasks: ['dev']
+            }
         }
     });
 
@@ -96,9 +107,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-processhtml');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
-    grunt.registerTask('minify-obfuscate', ['concat', 'ngmin', 'uglify', 'cssmin']);
-    grunt.registerTask('dev', ['clean:src', 'minify-obfuscate']);
-    grunt.registerTask('prod', ['clean', 'minify-obfuscate', 'processhtml', 'copy']);
+    grunt.registerTask('dev', ['clean:src', 'concat']);
+    grunt.registerTask('minify-obfuscate', ['concat', 'ngmin', 'uglify', 'cssmin', 'processhtml']);
+    grunt.registerTask('prod', ['clean', 'minify-obfuscate', 'copy']);
     grunt.registerTask('default', 'dev');
 };
