@@ -2,6 +2,7 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     ngannotate = require('gulp-ng-annotate'),
     uglify = require('gulp-uglify'),
+    cssmin = require('gulp-cssmin'),
     rename = require('gulp-rename'),
     del = require('del'),
     pkg = require('./package.json');
@@ -32,6 +33,13 @@ gulp.task('concat-minify-obfuscate', function() {
         .pipe(gulp.dest('dist/'));
 });
 
+gulp.task('css-minify', function() {
+    return gulp.src([resourcesPath + 'css/application.css'])
+        .pipe(cssmin())
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest('dist/' + resourcesPath + 'css/'));
+});
+
 
 
 gulp.task('dev', ['clean-src'], function() {
@@ -39,5 +47,5 @@ gulp.task('dev', ['clean-src'], function() {
 });
 
 gulp.task('prod', ['clean-src', 'clean-dist'], function() {
-    gulp.start('concat-minify-obfuscate');
+    gulp.start('concat-minify-obfuscate', 'css-minify');
 });
