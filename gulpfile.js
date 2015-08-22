@@ -6,12 +6,22 @@ var gulp = require('gulp'),
 var appPath = 'src/app/';
 var resourcesPath = appPath + 'resources/';
 
-gulp.task('clean', function(callback) {
-    del([appPath + pkg.name +  '.js', appPath + pkg.name + '.min.js', 'dist/**/*'], callback);
+gulp.task('clean-src', function(callback) {
+    del([appPath + pkg.name +  '.js', appPath + pkg.name + '.min.js'], callback);
+});
+
+gulp.task('clean-dist', function(callback) {
+    del(['dist/**/*'], callback);
 });
 
 gulp.task('scripts', function() {
     return gulp.src([appPath + 'modules/**/*Module.js', appPath + 'modules/**/*.js', appPath + 'app.js'])
         .pipe(concat(pkg.name + '.js'))
         .pipe(gulp.dest(appPath));
+});
+
+
+
+gulp.task('dev', ['clean-src'], function() {
+    gulp.start('scripts');
 });
