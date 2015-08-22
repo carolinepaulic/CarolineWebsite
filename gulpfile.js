@@ -1,6 +1,7 @@
 var gulp = require('gulp'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
+    rename = require('gulp-rename'),
     del = require('del'),
     pkg = require('./package.json');
 var appPath = 'src/app/';
@@ -14,18 +15,27 @@ gulp.task('clean-dist', function(callback) {
     del(['dist/**/*'], callback);
 });
 
-gulp.task('scripts', function() {
+gulp.task('concat', function() {
     return gulp.src([appPath + 'modules/**/*Module.js', appPath + 'modules/**/*.js', appPath + 'app.js'])
         .pipe(concat(pkg.name + '.js'))
         .pipe(gulp.dest(appPath));
 });
 
+gulp.task('concat-minify-obfuscate', function() {
+    return gulp.src([appPath + 'modules/**/*Module.js', appPath + 'modules/**/*.js', appPath + 'app.js'])
+        .pipe(concat(pkg.name + '.js'))
+        .pipe(gulp.dest(appPath))
+        .pipe(rename({suffix: '.min'}))
+        .pipe(uglify())
+        .pipe(gulp.dest('dist/'));
+});
+
 
 
 gulp.task('dev', ['clean-src'], function() {
-    gulp.start('scripts');
+    gulp.start('concat');
 });
 
 gulp.task('prod', ['clean-src', 'clean-dist'], function() {
-    gulp.start('scripts');
+    gulp.start('concat-minify-obfuscate');
 });
