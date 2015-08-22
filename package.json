@@ -17,6 +17,7 @@
     "grunt-contrib-uglify": "^0.9.1",
     "grunt-ngmin": "0.0.3",
     "grunt-obfuscator": "^0.1.0",
+    "grunt-processhtml": "^0.3.8",
     "uglify-js": "^2.4.24"
   },
   "scripts": {
