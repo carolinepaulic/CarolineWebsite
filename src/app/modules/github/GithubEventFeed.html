@@ -1,1 +1,22 @@
 <h2>Live Feed</h2>
+<table class="table">
+    <tr>
+        <th>Created At</th>
+        <th>Type</th>
+        <th>Repo</th>
+        <th>Branch</th>
+        <th>Commits</th>
+    </tr>
+    <tr data-ng-repeat="event in userEvents">
+        <td>{{event.created_at}}</td>
+        <td>{{getEventType(event)}}</td>
+        <td>{{getRepoName(event)}}</td>
+        <td>{{getBranchName(event)}}</td>
+        <td>{{getCommitMessages(event)}}</td>
+    </tr>
+</table>
+
+<ul>
+    <li data-ng-repeat="event in userEvents" data-ng-show="event.type == 'CreateEvent'">{{event}}</li>
+</ul>
+{{userEvents}}
