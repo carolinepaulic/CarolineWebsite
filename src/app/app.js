@@ -7,6 +7,7 @@ angular.module('caroline-website',
         'caroline-website.HomeModule',
         'caroline-website.ProjectModule',
         'caroline-website.ReadingModule',
+        'caroline-website.GithubModule',
         'caroline-website.ProfessionalModule',
         'caroline-website.FooterModule'
     ]);

@@ -1,4 +1,12 @@
 angular.module('caroline-website.FooterModule', []);
+angular.module('caroline-website.GithubModule', [])
+    .config(function($stateProvider) {
+        $stateProvider
+            .state('github', {
+                url: '/github',
+                templateUrl: 'modules/github/GithubTest.html'
+            });
+    });
 angular.module('caroline-website.HomeModule', [])
     .config(function($stateProvider, $urlRouterProvider) {
         $stateProvider
@@ -46,6 +54,30 @@ angular.module('caroline-website.SidebarModule', []);
     angular
         .module('caroline-website.FooterModule')
         .controller('FooterController', ['$scope', FooterController]);
+})();
+(function() {
+    function GithubEventFeedController($scope) {
+
+    }
+
+    function GithubEventFeed() {
+        return {
+            restrict: 'A',
+            templateUrl: 'modules/github/GithubEventFeed.html',
+            controller: ['$scope', GithubEventFeedController]
+        }
+    }
+
+    angular.module('caroline-website.GithubModule')
+        .directive('githubEventFeed', GithubEventFeed);
+})();
+(function() {
+    function GithubService($http) {
+
+    }
+
+    angular.module('caroline-website.GithubModule')
+        .service('GithubService', ['$http', GithubService]);
 })();
 (function () {
     function HomeController($scope, NavigationService) {
@@ -516,6 +548,7 @@ angular.module('caroline-website',
         'caroline-website.HomeModule',
         'caroline-website.ProjectModule',
         'caroline-website.ReadingModule',
+        'caroline-website.GithubModule',
         'caroline-website.ProfessionalModule',
         'caroline-website.FooterModule'
     ]);
