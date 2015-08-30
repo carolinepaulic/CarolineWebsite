@@ -57,11 +57,14 @@ angular.module('caroline-website.SidebarModule', []);
 })();
 (function() {
     function GithubEventFeedController($scope, GithubService) {
-        $scope.events = {};
-        GithubService.getCarolinePaulicUserEvents()
-            .success(function(response) {
-                $scope.userEvents = response;
-            });
+        $scope.getEventDate = function(event) {
+            var eventDate = "";
+            if (event && event.created_at) {
+                eventDate = Date.parse(event.created_at).toString("M/d/yyyy h:mm tt");
+            }
+
+            return eventDate;
+        };
 
         $scope.getCommitMessages = function(event) {
             var messages = "";
@@ -73,7 +76,7 @@ angular.module('caroline-website.SidebarModule', []);
                         firstMessage = false;
                     }
                     else {
-                        messages += ", " + commit.message;
+                        messages += "<b> | </b> " + commit.message;
                     }
                 });
             }
@@ -115,7 +118,29 @@ angular.module('caroline-website.SidebarModule', []);
             }
 
             return repoName;
+        };
+
+        $scope.getEventTitle = function(event) {
+            var eventType = $scope.getEventType(event);
+            if (eventType == 'Push') {
+                eventType += 'ed to';
+            }
+            else if (eventType == 'Create') {
+                eventType += 'd';
+            }
+
+            return eventType + ' ' + $scope.getBranchName(event) + ' in ' + $scope.getRepoName(event);
+        };
+
+        function load() {
+            $scope.events = {};
+            GithubService.getCarolinePaulicUserEvents()
+                .success(function(response) {
+                    $scope.userEvents = response;
+                });
         }
+
+        load();
     }
 
     function GithubEventFeed() {
@@ -616,6 +641,8 @@ angular.module('caroline-website',
         'ui.router',
         'ui.bootstrap',
         'ngRoute',
+        'ngSanitize',
+        'emoji',
         'caroline-website.SidebarModule',
         'caroline-website.HomeModule',
         'caroline-website.ProjectModule',

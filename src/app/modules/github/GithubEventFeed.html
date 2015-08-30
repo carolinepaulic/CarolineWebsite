@@ -1,22 +1,6 @@
-<h2>Live Feed</h2>
 <table class="table">
-    <tr>
-        <th>Created At</th>
-        <th>Type</th>
-        <th>Repo</th>
-        <th>Branch</th>
-        <th>Commits</th>
-    </tr>
     <tr data-ng-repeat="event in userEvents">
-        <td>{{event.created_at}}</td>
-        <td>{{getEventType(event)}}</td>
-        <td>{{getRepoName(event)}}</td>
-        <td>{{getBranchName(event)}}</td>
-        <td>{{getCommitMessages(event)}}</td>
+        <td style="font-style: italic; color: #888888; min-width: 170px; text-align: right;">[{{getEventDate(event)}}]</td>
+        <td>{{getEventTitle(event)}}. <span data-ng-if="event.payload.commits.length > 0">Commits: <span data-ng-bind-html="getCommitMessages(event) | emoji"></span></span></td>
     </tr>
 </table>
-
-<ul>
-    <li data-ng-repeat="event in userEvents" data-ng-show="event.type == 'CreateEvent'">{{event}}</li>
-</ul>
-{{userEvents}}
