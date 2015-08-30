@@ -136,7 +136,11 @@ angular.module('caroline-website.SidebarModule', []);
             $scope.events = {};
             GithubService.getCarolinePaulicUserEvents()
                 .success(function(response) {
-                    $scope.userEvents = response;
+                    $scope.userEvents = [];
+                    //Workaround because return page size is fixed at 30 items
+                    for (var i = 0; i < response.length && i < 10; i++) {
+                        $scope.userEvents.push(response[i]);
+                    }
                 });
         }
 
