@@ -1,5 +1,8 @@
-<div data-ng-repeat="event in userEvents" style="float: left; clear: left;">
-    <span style="display: block; font-style: italic; color: #888888; margin-top: 5px;">[{{getEventDate(event)}}]</span>
-    <span style="display: block;">{{getEventTitle(event)}}</span>
-    <span data-ng-show="event.payload.commits.length > 0" style="display: block; padding-bottom: 5px; border-bottom: 1px solid #dddddd;">Commits: <span data-ng-bind-html="getCommitMessages(event) | emoji"></span></span>
+<div style="max-height: 400px; overflow: auto; background-color: #f1f1f1; padding-left: 20px; border-radius: 6px;">
+    <h2 style="color: #43cb7e;">Live GitHub Feed</h2>
+    <div data-ng-repeat="event in userEvents" style="float: left; clear: left;">
+        <span style="display: block; font-style: italic; color: #36b6dd; margin-top: 5px;">[{{getEventDate(event)}}]</span>
+        <span style="display: block; color: #333333;">{{getEventTitle(event)}}</span>
+        <span data-ng-show="event.payload.commits.length > 0" style="display: block; color: #333333; padding-bottom: 5px; border-bottom: 1px solid #dddddd;">Commits: <span data-ng-bind-html="getCommitMessages(event) | emoji"></span></span>
+    </div>
 </div>
