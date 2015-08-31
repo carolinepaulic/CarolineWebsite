@@ -1,0 +1,1 @@
+angular.module('caroline-website.D3Module', []);

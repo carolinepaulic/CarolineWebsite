@@ -10,6 +10,7 @@ angular.module('caroline-website',
         'caroline-website.ProjectModule',
         'caroline-website.ReadingModule',
         'caroline-website.GithubModule',
+        'caroline-website.D3Module',
         'caroline-website.ProfessionalModule',
         'caroline-website.FooterModule'
     ]);
