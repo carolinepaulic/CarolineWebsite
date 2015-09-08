@@ -230,15 +230,13 @@ a:hover, .sidebar h1:hover {
 }
 
 /* D3 Map */
-
-
 .counties {
     fill: none;
 }
 
 .states {
     fill: none;
-    stroke: #fff;
+    stroke: #bbbbbb;
     stroke-linejoin: round;
 }
 
@@ -251,3 +249,22 @@ a:hover, .sidebar h1:hover {
 .q6-9 { fill:rgb(33,113,181); }
 .q7-9 { fill:rgb(8,81,156); }
 .q8-9 { fill:rgb(8,48,107); }
+
+path:hover {
+    opacity: .8;
+    stroke: #f58b2e;
+}
+
+div.tooltip {
+    position: absolute;
+    text-align: center;
+    height: 24px;
+    padding: 6px;
+    font: 12px sans-serif;
+    background: #f58b2e;
+    color: #ffffff;
+    border: 0px;
+    border-radius: 4px;
+    pointer-events: none;
+}
+
