@@ -1,5 +1,5 @@
-@import 'libraries/bourbon/bourbon.scss';
-@import 'libraries/neat/neat.scss';
-
+@import 'libraries/bourbon/bourbon';
+@import 'libraries/neat/neat';
+@import 'grid-settings';
+@import 'colors';
 @import 'basics';
-@import 'breakpoints';
