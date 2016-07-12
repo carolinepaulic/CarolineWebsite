@@ -38,7 +38,15 @@ ul {
   }
 
   * .emphasis {
-    color: $color-light-green;
+    color: $color-bright-green;
+
+    &.blue {
+      color: $color-blue;
+    }
+
+    &.pink {
+      color: $color-pink;
+    }
   }
 }
 

@@ -6,7 +6,7 @@ html {
 
 /* Body */
 #body {
-  background-color: #252525;
+  background-color: #343434;
   color: #fff;
   line-height: 1.3;
   font-size: 1.6em; }
@@ -34,7 +34,11 @@ ul {
   text-align: center; }
 
 .content * .emphasis {
-  color: #92d8b4; }
+  color: #74D26A; }
+  .content * .emphasis.blue {
+    color: #6ACCD2; }
+  .content * .emphasis.pink {
+    color: #F870C7; }
 
 .reading .carousel-indicators {
   display: none; }
@@ -159,20 +163,28 @@ ul {
   #nav .header-text {
     font-size: 4rem;
     margin-bottom: 2rem;
-    color: #44bb7e; }
+    color: #6dc598; }
   #nav .contact {
     display: inline-block;
     margin: 1rem 4rem; }
     #nav .contact a {
       font-size: 1.7rem;
       color: #fff;
-      transition: color .4s, border-color .4s;
+      transition: border-color .4s;
       padding-bottom: .3rem;
-      border-bottom: 1px solid #252525; }
-      #nav .contact a:hover {
-        color: #fff;
-        border-color: #44bb7e;
-        text-decoration: none; }
+      border-bottom: 1px solid #343434; }
+      #nav .contact a .fa, #nav .contact a .glyphicon {
+        transition: color .4s; }
+    #nav .contact.green-hover a:hover {
+      text-decoration: none;
+      border-color: #74D26A; }
+      #nav .contact.green-hover a:hover .fa, #nav .contact.green-hover a:hover .glyphicon {
+        color: #74D26A; }
+    #nav .contact.blue-hover a:hover {
+      text-decoration: none;
+      border-color: #6ACCD2; }
+      #nav .contact.blue-hover a:hover .fa, #nav .contact.blue-hover a:hover .glyphicon {
+        color: #6ACCD2; }
 
 #footer {
   border-top: 1px solid #fff;

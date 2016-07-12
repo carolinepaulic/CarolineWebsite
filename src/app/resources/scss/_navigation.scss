@@ -12,6 +12,17 @@
     color: $color-green;
   }
 
+  @mixin nav-link-hover-color($color) {
+    a:hover {
+      text-decoration: none;
+      border-color: $color;
+
+      .fa, .glyphicon {
+        color: $color;
+      }
+    }
+  }
+
   .contact {
     display: inline-block;
     margin: 1rem 4rem;
@@ -19,15 +30,21 @@
     a {
       font-size: 1.7rem;
       color: $color-white;
-      transition: color .4s, border-color .4s;
+      transition: border-color .4s;
       padding-bottom: .3rem;
       border-bottom: 1px solid $color-charcoal;
 
-      &:hover {
-        color: $color-white;
-        border-color: $color-green;
-        text-decoration: none;
+      .fa, .glyphicon {
+        transition: color .4s;
       }
+    }
+
+    &.green-hover {
+      @include nav-link-hover-color($color-bright-green);
+    }
+
+    &.blue-hover {
+      @include nav-link-hover-color($color-blue);
     }
   }
 }
