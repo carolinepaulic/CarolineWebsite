@@ -6,6 +6,7 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     processhtml = require('gulp-processhtml'),
     del = require('del'),
+    webserver = require('gulp-webserver'),
     livereload = require('gulp-livereload'),
     pkg = require('./package.json');
 var appPath = 'src/app/',
@@ -62,8 +63,17 @@ gulp.task('copy-to-dist', ['process-index'], function() {
         .pipe(gulp.dest(distPath + resourcesPath + 'images/'));
 });
 
+gulp.task('webserver', function() {
+  gulp.src('./')
+      .pipe(webserver({
+        open: appPath,
+        livereload: {
+          enable: true
+        }
+      }));
+});
+
 gulp.task('watch', function() {
-    livereload.listen();
     gulp.watch([appPath + 'modules/**', resourcesPath, appPath + 'app.js', appPath + 'index.html'], ['dev']);
     gulp.watch([appPath + pkg.name + '.js']).on('change', livereload.changed);
 });
@@ -77,3 +87,5 @@ gulp.task('dev', ['clean-src'], function() {
 gulp.task('prod', ['clean-src', 'clean-dist'], function() {
     gulp.start('js-minify-obfuscate', 'css-minify', 'copy-to-dist');
 });
+
+gulp.task('server', ['watch', 'webserver']);
