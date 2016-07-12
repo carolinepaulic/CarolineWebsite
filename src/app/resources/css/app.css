@@ -1,3 +1,9 @@
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
 /* Body */
 body .main-page, body .sidebar {
   font-family: "Lora", serif; }
