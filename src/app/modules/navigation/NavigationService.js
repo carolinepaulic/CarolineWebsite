@@ -18,6 +18,6 @@
     }
 
     angular
-        .module('caroline-website.SidebarModule')
+        .module('caroline-website.navigation-module')
         .service('NavigationService', ['$state', NavigationService]);
 })();

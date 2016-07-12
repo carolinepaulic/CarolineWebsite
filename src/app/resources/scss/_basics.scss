@@ -3,6 +3,9 @@ body .main-page, body .sidebar {
     font-family: "Lora", serif;
 }
 
+h1, h2, h3, h4, h5, h6 {
+}
+
 ul {
     padding-left: 7px;
 }
@@ -10,6 +13,49 @@ ul {
 .content {
   @include outer-container;
 }
+
+
+
+
+.content {
+  * .title {
+    @extend .cursive-font;
+    @extend h1;
+    text-align: center;
+  }
+  * .subtitle {
+    @extend .chalkboard-font;
+  //  @extend h3;
+    text-align: center;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Old
 
 .contact a, .project-listing a {
     color: #36b6dd;

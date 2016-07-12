@@ -36,6 +36,8 @@ angular.module('caroline-website.ProjectModule', [])
     });
 angular.module('caroline-website.ReadingModule', []);
 angular.module('caroline-website.SidebarModule', []);
+angular.module('caroline-website.navigation-module', []);
+
 (function () {
     function FooterController($scope) {
         $scope.getCurrentDate = function() {
@@ -74,6 +76,49 @@ angular.module('caroline-website.SidebarModule', []);
         .module('caroline-website.HomeModule')
         .service('HomeService', ['$http', HomeService]);
 })();
+(function () {
+    function NavigationService($state) {
+        this.goToHomePage = function() {
+            $state.go('home');
+        };
+
+        this.goToAllProjectsPage = function() {
+            $state.go('allProjects');
+        };
+
+        this.goToSingleProjectPage = function(projectId) {
+            $state.go('project', {'projectId': projectId});
+        };
+
+        this.goToProfessionalPage = function() {
+            $state.go('professional');
+        };
+    }
+
+    angular
+        .module('caroline-website.navigation-module')
+        .service('NavigationService', ['$state', NavigationService]);
+})();
+
+(function() {
+  function Controller($scope, NavigationService) {
+    $scope.test = "yo";
+  }
+
+
+  function Directive() {
+    return {
+      restrict: 'A',
+      templateUrl: 'modules/navigation/navigation.html',
+      controller: ['$scope', 'NavigationService', Controller]
+    };
+  }
+
+  angular
+    .module('caroline-website.navigation-module')
+    .directive('navigation', [Directive]);
+})();
+
 (function() {
     function ProfessionalController($scope, NavigationService) {
         $scope.goToSoftwareProjectsPage = function() {
@@ -466,29 +511,6 @@ angular.module('caroline-website.SidebarModule', []);
         .module('caroline-website.ReadingModule')
         .service('ReadingService', [ReadingService]);
 })();
-(function () {
-    function NavigationService($state) {
-        this.goToHomePage = function() {
-            $state.go('home');
-        };
-
-        this.goToAllProjectsPage = function() {
-            $state.go('allProjects');
-        };
-
-        this.goToSingleProjectPage = function(projectId) {
-            $state.go('project', {'projectId': projectId});
-        };
-
-        this.goToProfessionalPage = function() {
-            $state.go('professional');
-        };
-    }
-
-    angular
-        .module('caroline-website.SidebarModule')
-        .service('NavigationService', ['$state', NavigationService]);
-})();
 (function() {
     function SidebarController($scope, NavigationService) {
         $scope.goHome = function() {
@@ -512,6 +534,7 @@ angular.module('caroline-website',
         'ui.router',
         'ui.bootstrap',
         'ngRoute',
+        'caroline-website.navigation-module',
         'caroline-website.SidebarModule',
         'caroline-website.HomeModule',
         'caroline-website.ProjectModule',

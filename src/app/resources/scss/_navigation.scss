@@ -1,0 +1,13 @@
+.nav {
+  text-align: center;
+
+  .header-text {
+    @extend h1;
+    @extend .cursive-font;
+  }
+
+  .contact {
+    display: inline-block;
+    margin: 1rem 4rem;
+  }
+}
