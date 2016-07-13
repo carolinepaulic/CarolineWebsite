@@ -1,4 +1,3 @@
-angular.module('caroline-website.ReadingModule', []);
 angular.module('caroline-website.footer-module', []);
 
 angular.module('caroline-website.hire-me-module', [])
@@ -38,6 +37,8 @@ angular.module('caroline-website.project-module', [])
         templateUrl: 'modules/projects/single-project.html'
       });
   });
+
+angular.module('caroline-website.reading-module', []);
 
 (function() {
   function Controller($scope) {
@@ -379,84 +380,80 @@ angular.module('caroline-website.project-module', [])
 })();
 
 (function() {
-    function CurrentlyReadingController($scope, ReadingService) {
-        function getMostRecentBook() {
-            return $scope.booksRead[$scope.booksRead.length - 1];
-        }
-
-        $scope.getTitle = function() {
-            if (getMostRecentBook().active) {
-                return "Currently Reading";
-            }
-            return "Previously Read";
-        };
-
-        function load() {
-            $scope.booksRead = ReadingService.getAllBooksRead();
-            angular.forEach($scope.booksRead, function(book) {
-                book.active = false;
-            });
-            getMostRecentBook().active = true;
-        }
-
-        load();
+  function Controller($scope, ReadingService) {
+    function getMostRecentBook() {
+      return $scope.booksRead[$scope.booksRead.length - 1];
     }
 
+    $scope.getTitle = function() {
+      if (getMostRecentBook().active) {
+        return "Currently Reading";
+      }
+      return "Previously Read";
+    };
 
-    function CurrentlyReading() {
-        return {
-            restrict: 'A',
-            templateUrl: 'modules/reading/CurrentlyReading.html',
-            controller: ['$scope', 'ReadingService', CurrentlyReadingController]
-        }
+    function load() {
+      $scope.booksRead = ReadingService.getAllBooksRead();
+      angular.forEach($scope.booksRead, function(book) {
+        book.active = false;
+      });
+      getMostRecentBook().active = true;
     }
 
-    angular
-        .module('caroline-website.ReadingModule')
-        .directive('currentlyReading', [CurrentlyReading]);
+    load();
+  }
+
+  function Directive() {
+    return {
+      restrict: 'A',
+      templateUrl: 'modules/reading/currently-reading.html',
+      controller: ['$scope', 'ReadingService', Controller]
+    };
+  }
+
+  angular
+    .module('caroline-website.reading-module')
+    .directive('currentlyReading', [Directive]);
 })();
+
 (function () {
-    function ReadingService() {
-        this.bookImageDirectory = "resources/images/books/";
+  function Service() {
+    this.bookImageDirectory = "resources/images/books/";
 
-        //Results are sorted chronologically- last book that was read is the last in the list
-        this.getAllBooksRead = function() {
-            return [
-                {
-                    title: "100 Things Every Designer Needs to Know About People",
-                    author: "Susan Weinschenk",
-                    imagePath: this.bookImageDirectory + "100Things.jpg",
-                    url: "http://www.amazon.com/Things-Designer-People-Voices-Matter/dp/0321767535"
-                },
-                {
-                    title: "Usable Usability: Simple Steps for Making Stuff Better",
-                    author: "Eric Reiss",
-                    imagePath: this.bookImageDirectory + "UsableUsability.jpg",
-                    url: "http://www.amazon.com/Usable-Usability-Simple-Making-Better/dp/1118185471"
-                },
-                {
-                    title: "Evil by Design",
-                    author: "Chris Nodder",
-                    imagePath: this.bookImageDirectory + "EvilByDesign.jpg",
-                    url: "http://evilbydesign.info/book/"
-                }
-            ];
-        }
-    }
+    //Results are sorted chronologically- last book that was read is the last in the list
+    this.getAllBooksRead = function() {
+      return [{
+        title: "100 Things Every Designer Needs to Know About People",
+        author: "Susan Weinschenk",
+        imagePath: this.bookImageDirectory + "100Things.jpg",
+        url: "http://www.amazon.com/Things-Designer-People-Voices-Matter/dp/0321767535"
+      }, {
+        title: "Usable Usability: Simple Steps for Making Stuff Better",
+        author: "Eric Reiss",
+        imagePath: this.bookImageDirectory + "UsableUsability.jpg",
+        url: "http://www.amazon.com/Usable-Usability-Simple-Making-Better/dp/1118185471"
+      }, {
+        title: "Evil by Design",
+        author: "Chris Nodder",
+        imagePath: this.bookImageDirectory + "EvilByDesign.jpg",
+        url: "http://evilbydesign.info/book/"
+      }];
+    };
+  }
 
     angular
-        .module('caroline-website.ReadingModule')
-        .service('ReadingService', [ReadingService]);
+      .module('caroline-website.reading-module')
+      .service('ReadingService', [Service]);
 })();
+
 angular.module('caroline-website',
-    [
-        'ui.router',
-        'ui.bootstrap',
-        'ngRoute',
-        'caroline-website.hire-me-module',
-        'caroline-website.navigation-module',
-        'caroline-website.home-module',
-        'caroline-website.project-module',
-        'caroline-website.ReadingModule',
-        'caroline-website.footer-module'
-    ]);
+  [ 'ui.router',
+    'ui.bootstrap',
+    'ngRoute',
+    'caroline-website.hire-me-module',
+    'caroline-website.navigation-module',
+    'caroline-website.home-module',
+    'caroline-website.project-module',
+    'caroline-website.reading-module',
+    'caroline-website.footer-module'
+  ]);

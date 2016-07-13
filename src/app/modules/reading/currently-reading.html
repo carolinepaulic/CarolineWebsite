@@ -1,0 +1,11 @@
+<div style="height: 200px" class="reading">
+  <h4>{{getTitle()}}</h4>
+  <carousel data-interval="0" data-no-wrap="true">
+    <slide data-ng-repeat="book in booksRead" data-active="book.active">
+      <a class="book-title" href="{{book.url}}">
+        <img data-ng-src="{{book.imagePath}}" style="margin: auto; width: 70%; margin-bottom: 10px;">
+        <span style="font-style: italic;">{{book.title}}</span> by {{book.author}}
+      </a>
+    </slide>
+  </carousel>
+</div>
