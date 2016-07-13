@@ -1,0 +1,96 @@
+#nav {
+  text-align: center;
+  padding: 2rem 2rem 1rem 2rem;
+  margin-bottom: 2rem;
+  background-color: $color-dark-charcoal;
+
+  @include media($small) {
+    margin-bottom: 0;
+    padding-bottom: 2rem;
+  }
+  @include media($medium) {
+    padding-bottom: 2rem;
+  }
+
+  .header-text {
+    //@extend h1;
+    margin-bottom: 1rem;
+
+    @include media($small) {
+      text-align: left;
+    }
+    @include media($medium) {
+      text-align: left;
+    }
+
+    a {
+      @extend .clickable;
+      @extend .cursive-font;
+      font-size: 4.5rem;
+      color: $color-green;
+      transition: color .4s;
+
+      &:hover {
+        color: $color-bright-green;
+        text-decoration: none;
+      }
+    }
+  }
+
+  @mixin nav-link-hover-color($color) {
+    a:hover {
+      text-decoration: none;
+      border-color: $color;
+
+      .fa, .glyphicon {
+        color: $color;
+      }
+    }
+  }
+
+  .menu-item {
+    display: inline-block;
+    @include media($small) {
+      margin: 1.5rem 0;
+      display: block;
+      text-align: left;
+      &.last {
+        margin-bottom: 0;
+      }
+    }
+    @include media($medium) {
+      margin: 1.5rem 0;
+      display: block;
+      text-align: left;
+      &.last {
+        margin-bottom: 0;
+      }
+    }
+    @include media($large) {
+      margin: 1rem 3%;
+    }
+
+
+
+    a {
+      font-size: 1.7rem;
+      color: $color-white;
+      transition: border-color .4s;
+      padding-bottom: .3rem;
+      border-bottom: 1px solid $color-dark-charcoal;
+
+      .fa, .glyphicon {
+        margin-right: .3rem;
+        transition: color .4s;
+      }
+    }
+
+    &.green-hover {
+      @include nav-link-hover-color($color-bright-green);
+    }
+
+    &.blue-hover {
+      @include nav-link-hover-color($color-blue);
+    }
+  }
+}

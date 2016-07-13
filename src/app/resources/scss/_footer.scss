@@ -1,0 +1,41 @@
+#footer {
+  background-color: $color-dark-charcoal;
+  padding: 1rem 2rem;
+  margin-top: 3rem;
+  min-height: 3rem;
+  font-size: .8em;
+
+  #footer-fantastic-text {
+    @include media($small) {
+      text-align: center;
+      margin-bottom: .7rem;
+      @include span-columns(12);
+    }
+    @include media($medium) {
+      text-align: left;
+      @include span-columns(6);
+    }
+    @include media($large) {
+      text-align: left;
+      @include span-columns(6);
+    }
+    .fa, .glyphicon {
+      color: $color-blue;
+    }
+  }
+
+  #footer-copyright-text {
+    @include media($small) {
+      text-align: center;
+      @include span-columns(12);
+    }
+    @include media($medium) {
+      text-align: right;
+      @include span-columns(6);
+    }
+    @include media($large) {
+      text-align: right;
+      @include span-columns(6);
+    }
+  }
+}

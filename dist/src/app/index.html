@@ -2,6 +2,7 @@
 <html data-ng-app="caroline-website">
 <head lang="en">
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- External JS Resources -->
     <script src="resources/js/angular/angular.min.js"></script>
@@ -19,11 +20,13 @@
     <link href='http://fonts.googleapis.com/css?family=Handlee|Pacifico|Lora' rel='stylesheet' type='text/css'>
 </head>
 <body class="main-background">
-    <div class="col-xs-2">
+    <div data-navigation></div>
+    <div data-ui-view class="content"></div>
+    <!-- <div class="col-xs-2">
         <div data-ng-include data-src="'modules/sidebar/SidebarView.html'"></div>
     </div>
     <div data-ui-view class="col-xs-10">
-    </div>
+    </div> -->
     <div data-ng-include data-src="'modules/footer/Footer.html'" data-ng-controller="FooterController"></div>
 </body>
 </html>

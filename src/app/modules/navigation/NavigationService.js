@@ -4,6 +4,10 @@
             $state.go('home');
         };
 
+        this.goToHireMePage = function() {
+          $state.go('hire-me');
+        };
+
         this.goToAllProjectsPage = function() {
             $state.go('allProjects');
         };
@@ -18,6 +22,6 @@
     }
 
     angular
-        .module('caroline-website.SidebarModule')
+        .module('caroline-website.navigation-module')
         .service('NavigationService', ['$state', NavigationService]);
 })();

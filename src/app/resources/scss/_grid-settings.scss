@@ -1,0 +1,15 @@
+@import 'libraries/neat/neat-helpers';
+
+//Intended for phones
+$small-size-max-width: 450px;
+
+//Intended for tablets
+$medium-size-min-width: $small-size-max-width + 1;
+$medium-size-max-width: 768px;
+
+//Intended for laptops/desktops/etc.
+$large-size-min-width: $medium-size-max-width + 1;
+
+$small: new-breakpoint(max-width $small-size-max-width 12);
+$medium: new-breakpoint(min-width $medium-size-min-width max-width $medium-size-max-width 12);
+$large: new-breakpoint(min-width $large-size-min-width 12);

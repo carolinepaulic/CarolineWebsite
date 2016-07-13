@@ -23,7 +23,7 @@ gulp.task('clean-dist', function(callback) {
 });
 
 gulp.task('concat', function() {
-    return gulp.src([appPath + 'modules/**/*Module.js', appPath + 'modules/**/*.js', appPath + 'app.js'])
+    return gulp.src([appPath + 'modules/**/*Module.js', appPath + 'modules/**/*-module.js', appPath + 'modules/**/*.js', appPath + 'app.js'])
         .pipe(concat(pkg.name + '.js'))
         .pipe(gulp.dest(appPath));
 });
@@ -89,7 +89,7 @@ gulp.task('watch', function() {
 
 
 gulp.task('dev', ['clean-src'], function() {
-    gulp.start('concat', 'sass');
+    gulp.start('concat');
 });
 
 gulp.task('prod', ['clean-src', 'clean-dist'], function() {
