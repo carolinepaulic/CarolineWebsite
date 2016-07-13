@@ -1,5 +1,5 @@
 (function () {
-    function HomeController($scope, NavigationService) {
+    function Controller($scope, NavigationService) {
         $scope.goToProfessionalPage = function() {
             NavigationService.goToProfessionalPage();
         };
@@ -14,6 +14,6 @@
     }
 
     angular
-        .module('caroline-website.HomeModule')
-        .controller('HomeController', ['$scope', 'NavigationService', HomeController]);
+        .module('caroline-website.home-module')
+        .controller('Controller', ['$scope', 'NavigationService', Controller]);
 })();

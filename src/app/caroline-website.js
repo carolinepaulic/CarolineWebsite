@@ -1,16 +1,4 @@
 angular.module('caroline-website.FooterModule', []);
-angular.module('caroline-website.HomeModule', [])
-    .config(function($stateProvider, $urlRouterProvider) {
-        $stateProvider
-            .state('home', {
-                url: '/home',
-                templateUrl: 'modules/home/HomeView.html',
-                controller: 'HomeController'
-            });
-
-        $urlRouterProvider.when('', '/home');
-        $urlRouterProvider.when('/', '/home');
-    });
 angular.module('caroline-website.ProfessionalModule', [])
     .config(function($stateProvider) {
         $stateProvider
@@ -46,6 +34,19 @@ angular.module('caroline-website.hire-me-module', [])
             });
     });
 
+angular.module('caroline-website.home-module', [])
+    .config(function($stateProvider, $urlRouterProvider) {
+        $stateProvider
+            .state('home', {
+                url: '/home',
+                templateUrl: 'modules/home/home.html',
+                controller: 'Controller'
+            });
+
+        $urlRouterProvider.when('', '/home');
+        $urlRouterProvider.when('/', '/home');
+    });
+
 angular.module('caroline-website.navigation-module', []);
 
 (function () {
@@ -69,7 +70,7 @@ angular.module('caroline-website.navigation-module', []);
 })();
 
 (function () {
-    function HomeController($scope, NavigationService) {
+    function Controller($scope, NavigationService) {
         $scope.goToProfessionalPage = function() {
             NavigationService.goToProfessionalPage();
         };
@@ -84,21 +85,10 @@ angular.module('caroline-website.navigation-module', []);
     }
 
     angular
-        .module('caroline-website.HomeModule')
-        .controller('HomeController', ['$scope', 'NavigationService', HomeController]);
+        .module('caroline-website.home-module')
+        .controller('Controller', ['$scope', 'NavigationService', Controller]);
 })();
 
-(function () {
-    function HomeService($http) {
-        this.getHomeText = function() {
-            return "hola";
-        }
-    }
-
-    angular
-        .module('caroline-website.HomeModule')
-        .service('HomeService', ['$http', HomeService]);
-})();
 (function () {
     function NavigationService($state) {
         this.goToHomePage = function() {
@@ -572,7 +562,7 @@ angular.module('caroline-website',
         'caroline-website.hire-me-module',
         'caroline-website.navigation-module',
         'caroline-website.SidebarModule',
-        'caroline-website.HomeModule',
+        'caroline-website.home-module',
         'caroline-website.ProjectModule',
         'caroline-website.ReadingModule',
         'caroline-website.ProfessionalModule',
