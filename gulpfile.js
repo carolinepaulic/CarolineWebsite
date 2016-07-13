@@ -89,7 +89,7 @@ gulp.task('watch', function() {
 
 
 gulp.task('dev', ['clean-src'], function() {
-    gulp.start('concat', 'sass');
+    gulp.start('concat');
 });
 
 gulp.task('prod', ['clean-src', 'clean-dist'], function() {
