@@ -30,7 +30,7 @@
       color: $color-green;
       transition: color .4s;
 
-      &:hover {
+      &:hover, &:active {
         color: $color-bright-green;
         text-decoration: none;
       }
@@ -38,7 +38,7 @@
   }
 
   @mixin nav-link-hover-color($color) {
-    a:hover {
+    a:hover, a:active, a:focus {
       text-decoration: none;
       border-color: $color;
 

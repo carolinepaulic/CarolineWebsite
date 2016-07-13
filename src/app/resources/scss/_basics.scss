@@ -33,7 +33,7 @@ ul {
       color: $color-light-grey;
     }
 
-    &:hover {
+    &:hover, &:active {
       color: $color-bright-green;
       text-decoration: none;
       @extend .clickable;
