@@ -21,7 +21,7 @@
                     name: "This Website",
                     tagline: "",
                     dateRange: "Started July 2015",
-                    thumbnailPath: this.projectImageDirectory + "PersonalWebsiteThumbnail.png",
+                    //thumbnailPath: this.projectImageDirectory + "PersonalWebsiteThumbnail.png",
                     imagePath: "",
                     about: "My personal website that I built using HTML, CSS, BootStrap, JavaScript, and AngularJS. This project is " +
                     "still in progress.",
@@ -148,7 +148,7 @@
                  id: 222222222,
                  name: "Striped Curtains",
                  dateRange: "April 2014 - Dec 2014",
-                 imagePath: this.projectImageDirectory + "StripedCurtains.jpg",
+                 //imagePath: this.projectImageDirectory + "StripedCurtains.jpg",
                  about: "I sewed my own curtains using Thai silk for the front and a heavy linen lining.",
                  challenges: "It was difficult to get all of the stripes lined up.",
                  thingsLearned: "Thai silk is super delicate and it WILL get threads all over your house, no matter how hard you try.",
@@ -160,7 +160,7 @@
                  name: "D3 Charting",
                  tagline: "",
                  dateRange: "Started August 2015",
-                 thumbnailPath: this.projectImageDirectory + "D3ChartingThumbnail.png",
+                 //thumbnailPath: this.projectImageDirectory + "D3ChartingThumbnail.png",
                  imagePath: "",
                  about: "A little app that I made to learn how to use the D3.js charting library. This project is " +
                  "still in progress.",
