@@ -4,6 +4,10 @@
             $state.go('home');
         };
 
+        this.goToHireMePage = function() {
+          $state.go('hire-me');
+        };
+
         this.goToAllProjectsPage = function() {
             $state.go('allProjects');
         };

@@ -1,6 +1,14 @@
 (function() {
   function Controller($scope, NavigationService) {
     $scope.test = "yo";
+
+    $scope.goToHomePage = function() {
+      NavigationService.goToHomePage();
+    };
+
+    $scope.goToHireMePage = function() {
+      NavigationService.goToHireMePage();
+    };
   }
 
 

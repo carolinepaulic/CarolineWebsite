@@ -10,26 +10,33 @@
 h1, h2, h3, h4, h5, h6 {
 }
 
+a:hover, .clickable {
+  cursor: pointer;
+}
+
 ul {
-    padding-left: 7px;
+  padding-left: 7px;
+  li {
+    margin-bottom: .7rem;
+  }
 }
 
 .content {
-  @include outer-container;
+  @include outer-container(900px);
 }
 
 
 
 
 .content {
-  * .title {
+  .title, * .title {
     @extend .cursive-font;
     //@extend h1;
     font-size: 4em;
     text-align: center;
     margin-bottom: 2rem;
   }
-  * .subtitle {
+  .subtitle, * .subtitle {
     @extend .chalkboard-font;
   //  @extend h3;
     font-size: 2.5em;

@@ -36,6 +36,16 @@ angular.module('caroline-website.ProjectModule', [])
     });
 angular.module('caroline-website.ReadingModule', []);
 angular.module('caroline-website.SidebarModule', []);
+angular.module('caroline-website.hire-me-module', [])
+    .config(function($stateProvider) {
+        $stateProvider
+            .state('hire-me', {
+                url: '/hire',
+                templateUrl: 'modules/hire-me/hire-me.html',
+                controller: 'HireMeController'
+            });
+    });
+
 angular.module('caroline-website.navigation-module', []);
 
 (function () {
@@ -49,6 +59,15 @@ angular.module('caroline-website.navigation-module', []);
         .module('caroline-website.FooterModule')
         .controller('FooterController', ['$scope', FooterController]);
 })();
+(function() {
+    function HireMeController($scope) {
+    }
+
+    angular
+        .module('caroline-website.hire-me-module')
+        .controller('HireMeController', ['$scope', HireMeController]);
+})();
+
 (function () {
     function HomeController($scope, NavigationService) {
         $scope.goToProfessionalPage = function() {
@@ -82,6 +101,10 @@ angular.module('caroline-website.navigation-module', []);
             $state.go('home');
         };
 
+        this.goToHireMePage = function() {
+          $state.go('hire-me');
+        };
+
         this.goToAllProjectsPage = function() {
             $state.go('allProjects');
         };
@@ -103,6 +126,14 @@ angular.module('caroline-website.navigation-module', []);
 (function() {
   function Controller($scope, NavigationService) {
     $scope.test = "yo";
+
+    $scope.goToHomePage = function() {
+      NavigationService.goToHomePage();
+    };
+
+    $scope.goToHireMePage = function() {
+      NavigationService.goToHireMePage();
+    };
   }
 
 
@@ -534,6 +565,7 @@ angular.module('caroline-website',
         'ui.router',
         'ui.bootstrap',
         'ngRoute',
+        'caroline-website.hire-me-module',
         'caroline-website.navigation-module',
         'caroline-website.SidebarModule',
         'caroline-website.HomeModule',
