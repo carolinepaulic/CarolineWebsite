@@ -1,12 +1,3 @@
-angular.module('caroline-website.ProfessionalModule', [])
-    .config(function($stateProvider) {
-        $stateProvider
-            .state('professional', {
-                url: '/professional',
-                templateUrl: 'modules/professional/ProfessionalView.html',
-                controller: 'ProfessionalController'
-            });
-    });
 angular.module('caroline-website.ReadingModule', []);
 angular.module('caroline-website.footer-module', []);
 
@@ -150,17 +141,6 @@ angular.module('caroline-website.project-module', [])
     .directive('navigation', [Directive]);
 })();
 
-(function() {
-    function ProfessionalController($scope, NavigationService) {
-        $scope.goToSoftwareProjectsPage = function() {
-            NavigationService.goToAllProjectsPage();
-        };
-    }
-
-    angular
-        .module('caroline-website.ProfessionalModule')
-        .controller('ProfessionalController', ['$scope', 'NavigationService', ProfessionalController])
-})();
 (function () {
     function Service() {
         this.projectImageDirectory = "resources/images/projects/";
@@ -478,6 +458,5 @@ angular.module('caroline-website',
         'caroline-website.home-module',
         'caroline-website.project-module',
         'caroline-website.ReadingModule',
-        'caroline-website.ProfessionalModule',
         'caroline-website.footer-module'
     ]);

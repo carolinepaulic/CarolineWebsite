@@ -8,6 +8,5 @@ angular.module('caroline-website',
         'caroline-website.home-module',
         'caroline-website.project-module',
         'caroline-website.ReadingModule',
-        'caroline-website.ProfessionalModule',
         'caroline-website.footer-module'
     ]);
