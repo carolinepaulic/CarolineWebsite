@@ -10,5 +10,5 @@ angular.module('caroline-website',
         'caroline-website.ProjectModule',
         'caroline-website.ReadingModule',
         'caroline-website.ProfessionalModule',
-        'caroline-website.FooterModule'
+        'caroline-website.footer-module'
     ]);

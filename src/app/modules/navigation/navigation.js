@@ -1,7 +1,5 @@
 (function() {
   function Controller($scope, NavigationService) {
-    $scope.test = "yo";
-
     $scope.goToHomePage = function() {
       NavigationService.goToHomePage();
     };

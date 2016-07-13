@@ -1,4 +1,3 @@
-angular.module('caroline-website.FooterModule', []);
 angular.module('caroline-website.ProfessionalModule', [])
     .config(function($stateProvider) {
         $stateProvider
@@ -24,6 +23,8 @@ angular.module('caroline-website.ProjectModule', [])
     });
 angular.module('caroline-website.ReadingModule', []);
 angular.module('caroline-website.SidebarModule', []);
+angular.module('caroline-website.footer-module', []);
+
 angular.module('caroline-website.hire-me-module', [])
     .config(function($stateProvider) {
         $stateProvider
@@ -49,17 +50,26 @@ angular.module('caroline-website.home-module', [])
 
 angular.module('caroline-website.navigation-module', []);
 
-(function () {
-    function FooterController($scope) {
-        $scope.getCurrentDate = function() {
-            return Date.now();
-        }
-    }
+(function() {
+  function Controller($scope) {
+    $scope.getCurrentDate = function() {
+      return Date.now();
+    };
+  }
 
-    angular
-        .module('caroline-website.FooterModule')
-        .controller('FooterController', ['$scope', FooterController]);
+  function Directive() {
+    return {
+      restrict: 'A',
+      templateUrl: 'modules/footer/footer.html',
+      controller: ['$scope', Controller]
+    };
+  }
+
+  angular
+    .module('caroline-website.footer-module')
+    .directive('footer', [Directive]);
 })();
+
 (function() {
     function HireMeController($scope) {
     }
@@ -119,8 +129,6 @@ angular.module('caroline-website.navigation-module', []);
 
 (function() {
   function Controller($scope, NavigationService) {
-    $scope.test = "yo";
-
     $scope.goToHomePage = function() {
       NavigationService.goToHomePage();
     };
@@ -566,5 +574,5 @@ angular.module('caroline-website',
         'caroline-website.ProjectModule',
         'caroline-website.ReadingModule',
         'caroline-website.ProfessionalModule',
-        'caroline-website.FooterModule'
+        'caroline-website.footer-module'
     ]);
