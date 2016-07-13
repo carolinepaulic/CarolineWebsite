@@ -11,7 +11,7 @@ html {
   line-height: 1.3;
   font-size: 1.6em; }
 
-.clickable, .content a:hover, .content a:active, #nav .header-text a {
+.clickable, .content a:hover, .content a:active, .content a:focus, #nav .header-text a {
   cursor: pointer; }
 
 ul {
@@ -33,7 +33,7 @@ ul {
     transition: color .4s; }
     .content a.subtle {
       color: #bbb; }
-    .content a:hover, .content a:active {
+    .content a:hover, .content a:active, .content a:focus {
       color: #6FDC85;
       text-decoration: none; }
   .content p {
@@ -237,7 +237,7 @@ ul {
       font-size: 4.5rem;
       color: #6dc598;
       transition: color .4s; }
-      #nav .header-text a:hover, #nav .header-text a:active {
+      #nav .header-text a:hover, #nav .header-text a:active, #nav .header-text a:focus {
         color: #6FDC85;
         text-decoration: none; }
   #nav .menu-item {

@@ -30,7 +30,7 @@
       color: $color-green;
       transition: color .4s;
 
-      &:hover, &:active {
+      &:hover, &:active, &:focus {
         color: $color-bright-green;
         text-decoration: none;
       }
