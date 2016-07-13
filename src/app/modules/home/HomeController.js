@@ -7,6 +7,10 @@
         $scope.goToAllProjectsPage = function() {
             NavigationService.goToAllProjectsPage();
         };
+
+        $scope.goToHireMePage = function() {
+          NavigationService.goToHireMePage();
+        };
     }
 
     angular

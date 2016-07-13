@@ -6,7 +6,9 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     processhtml = require('gulp-processhtml'),
     del = require('del'),
+    webserver = require('gulp-webserver'),
     livereload = require('gulp-livereload'),
+    sass = require('gulp-sass'),
     pkg = require('./package.json');
 var appPath = 'src/app/',
     resourcesPath = appPath + 'resources/',
@@ -21,7 +23,7 @@ gulp.task('clean-dist', function(callback) {
 });
 
 gulp.task('concat', function() {
-    return gulp.src([appPath + 'modules/**/*Module.js', appPath + 'modules/**/*.js', appPath + 'app.js'])
+    return gulp.src([appPath + 'modules/**/*Module.js', appPath + 'modules/**/*-module.js', appPath + 'modules/**/*.js', appPath + 'app.js'])
         .pipe(concat(pkg.name + '.js'))
         .pipe(gulp.dest(appPath));
 });
@@ -35,10 +37,16 @@ gulp.task('js-minify-obfuscate', ['concat'], function() {
 });
 
 gulp.task('css-minify', function() {
-    return gulp.src([resourcesPath + 'css/application.css'])
+    return gulp.src([resourcesPath + 'css/app.css'])
         .pipe(cssmin())
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(distPath + resourcesPath + 'css/'));
+});
+
+gulp.task('sass', function() {
+  return gulp.src(resourcesPath + 'scss/**.scss')
+      .pipe(sass().on('error', sass.logError))
+      .pipe(gulp.dest(resourcesPath + 'css/'));
 });
 
 gulp.task('process-index', function() {
@@ -62,9 +70,19 @@ gulp.task('copy-to-dist', ['process-index'], function() {
         .pipe(gulp.dest(distPath + resourcesPath + 'images/'));
 });
 
+gulp.task('webserver', function() {
+  gulp.src('./')
+      .pipe(webserver({
+        open: appPath,
+        livereload: {
+          enable: true
+        }
+      }));
+});
+
 gulp.task('watch', function() {
-    livereload.listen();
     gulp.watch([appPath + 'modules/**', resourcesPath, appPath + 'app.js', appPath + 'index.html'], ['dev']);
+    gulp.watch([resourcesPath + 'scss/**'], ['sass']);
     gulp.watch([appPath + pkg.name + '.js']).on('change', livereload.changed);
 });
 
@@ -77,3 +95,5 @@ gulp.task('dev', ['clean-src'], function() {
 gulp.task('prod', ['clean-src', 'clean-dist'], function() {
     gulp.start('js-minify-obfuscate', 'css-minify', 'copy-to-dist');
 });
+
+gulp.task('server', ['watch', 'webserver']);

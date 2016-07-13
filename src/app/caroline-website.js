@@ -36,6 +36,18 @@ angular.module('caroline-website.ProjectModule', [])
     });
 angular.module('caroline-website.ReadingModule', []);
 angular.module('caroline-website.SidebarModule', []);
+angular.module('caroline-website.hire-me-module', [])
+    .config(function($stateProvider) {
+        $stateProvider
+            .state('hire-me', {
+                url: '/hire',
+                templateUrl: 'modules/hire-me/hire-me.html',
+                controller: 'HireMeController'
+            });
+    });
+
+angular.module('caroline-website.navigation-module', []);
+
 (function () {
     function FooterController($scope) {
         $scope.getCurrentDate = function() {
@@ -47,6 +59,15 @@ angular.module('caroline-website.SidebarModule', []);
         .module('caroline-website.FooterModule')
         .controller('FooterController', ['$scope', FooterController]);
 })();
+(function() {
+    function HireMeController($scope) {
+    }
+
+    angular
+        .module('caroline-website.hire-me-module')
+        .controller('HireMeController', ['$scope', HireMeController]);
+})();
+
 (function () {
     function HomeController($scope, NavigationService) {
         $scope.goToProfessionalPage = function() {
@@ -55,6 +76,10 @@ angular.module('caroline-website.SidebarModule', []);
 
         $scope.goToAllProjectsPage = function() {
             NavigationService.goToAllProjectsPage();
+        };
+
+        $scope.goToHireMePage = function() {
+          NavigationService.goToHireMePage();
         };
     }
 
@@ -74,6 +99,61 @@ angular.module('caroline-website.SidebarModule', []);
         .module('caroline-website.HomeModule')
         .service('HomeService', ['$http', HomeService]);
 })();
+(function () {
+    function NavigationService($state) {
+        this.goToHomePage = function() {
+            $state.go('home');
+        };
+
+        this.goToHireMePage = function() {
+          $state.go('hire-me');
+        };
+
+        this.goToAllProjectsPage = function() {
+            $state.go('allProjects');
+        };
+
+        this.goToSingleProjectPage = function(projectId) {
+            $state.go('project', {'projectId': projectId});
+        };
+
+        this.goToProfessionalPage = function() {
+            $state.go('professional');
+        };
+    }
+
+    angular
+        .module('caroline-website.navigation-module')
+        .service('NavigationService', ['$state', NavigationService]);
+})();
+
+(function() {
+  function Controller($scope, NavigationService) {
+    $scope.test = "yo";
+
+    $scope.goToHomePage = function() {
+      NavigationService.goToHomePage();
+    };
+
+    $scope.goToHireMePage = function() {
+      NavigationService.goToHireMePage();
+    };
+  }
+
+
+  function Directive() {
+    return {
+      restrict: 'A',
+      templateUrl: 'modules/navigation/navigation.html',
+      controller: ['$scope', 'NavigationService', Controller]
+    };
+  }
+
+  angular
+    .module('caroline-website.navigation-module')
+    .directive('navigation', [Directive]);
+})();
+
 (function() {
     function ProfessionalController($scope, NavigationService) {
         $scope.goToSoftwareProjectsPage = function() {
@@ -466,29 +546,6 @@ angular.module('caroline-website.SidebarModule', []);
         .module('caroline-website.ReadingModule')
         .service('ReadingService', [ReadingService]);
 })();
-(function () {
-    function NavigationService($state) {
-        this.goToHomePage = function() {
-            $state.go('home');
-        };
-
-        this.goToAllProjectsPage = function() {
-            $state.go('allProjects');
-        };
-
-        this.goToSingleProjectPage = function(projectId) {
-            $state.go('project', {'projectId': projectId});
-        };
-
-        this.goToProfessionalPage = function() {
-            $state.go('professional');
-        };
-    }
-
-    angular
-        .module('caroline-website.SidebarModule')
-        .service('NavigationService', ['$state', NavigationService]);
-})();
 (function() {
     function SidebarController($scope, NavigationService) {
         $scope.goHome = function() {
@@ -512,6 +569,8 @@ angular.module('caroline-website',
         'ui.router',
         'ui.bootstrap',
         'ngRoute',
+        'caroline-website.hire-me-module',
+        'caroline-website.navigation-module',
         'caroline-website.SidebarModule',
         'caroline-website.HomeModule',
         'caroline-website.ProjectModule',
