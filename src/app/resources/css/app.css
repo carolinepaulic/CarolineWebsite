@@ -36,6 +36,8 @@ ul {
     .content a:hover {
       color: #6FDC85;
       text-decoration: none; }
+  .content p {
+    margin-bottom: 1.5rem; }
   .content .title, .content * .title {
     font-size: 4em;
     text-align: center;
@@ -69,7 +71,7 @@ ul {
     margin-left: 1px; }
   .content .note {
     display: block;
-    margin-top: .5rem; }
+    margin-top: .7rem; }
   .content .section-spacer {
     margin-top: 3rem; }
   .content * .emphasis {
