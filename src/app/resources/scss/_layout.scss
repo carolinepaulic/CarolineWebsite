@@ -1,3 +1,8 @@
+.content .row, #footer .row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 .col-12 {
   @include span-columns(12);
 }

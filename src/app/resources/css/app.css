@@ -54,6 +54,10 @@ ul {
   bottom: auto;
   top: 70px; }
 
+.content .row, #footer .row {
+  margin-left: 0;
+  margin-right: 0; }
+
 .col-12 {
   float: left;
   display: block;
@@ -193,6 +197,63 @@ ul {
 
 #footer {
   border-top: 1px solid #fff;
-  padding: 1rem;
+  padding: 1rem 2rem;
   margin-top: 3rem;
-  height: 3rem; }
+  min-height: 3rem; }
+  @media screen and (max-width: 450px) {
+    #footer #footer-fantastic-text {
+      text-align: center;
+      margin-bottom: .7rem;
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 100%; }
+      #footer #footer-fantastic-text:last-child {
+        margin-right: 0; } }
+  @media screen and (min-width: 451px) and (max-width: 768px) {
+    #footer #footer-fantastic-text {
+      text-align: left;
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 48.82117%; }
+      #footer #footer-fantastic-text:last-child {
+        margin-right: 0; } }
+  @media screen and (min-width: 769px) {
+    #footer #footer-fantastic-text {
+      text-align: left;
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 48.82117%; }
+      #footer #footer-fantastic-text:last-child {
+        margin-right: 0; } }
+  #footer #footer-fantastic-text .fa, #footer #footer-fantastic-text .glyphicon {
+    color: #6ACCD2; }
+  @media screen and (max-width: 450px) {
+    #footer #footer-copyright-text {
+      text-align: center;
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 100%; }
+      #footer #footer-copyright-text:last-child {
+        margin-right: 0; } }
+  @media screen and (min-width: 451px) and (max-width: 768px) {
+    #footer #footer-copyright-text {
+      text-align: right;
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 48.82117%; }
+      #footer #footer-copyright-text:last-child {
+        margin-right: 0; } }
+  @media screen and (min-width: 769px) {
+    #footer #footer-copyright-text {
+      text-align: right;
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 48.82117%; }
+      #footer #footer-copyright-text:last-child {
+        margin-right: 0; } }
