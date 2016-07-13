@@ -1,5 +1,5 @@
 (function () {
-    function NavigationService($state) {
+    function Service($state) {
         this.goToHomePage = function() {
             $state.go('home');
         };
@@ -23,5 +23,5 @@
 
     angular
         .module('caroline-website.navigation-module')
-        .service('NavigationService', ['$state', NavigationService]);
+        .service('NavigationService', ['$state', Service]);
 })();

@@ -7,22 +7,7 @@ angular.module('caroline-website.ProfessionalModule', [])
                 controller: 'ProfessionalController'
             });
     });
-angular.module('caroline-website.ProjectModule', [])
-    .config(function($stateProvider) {
-        $stateProvider
-            .state('allProjects', {
-                url: '/allProjects',
-                templateUrl: 'modules/projects/AllProjectsView.html',
-                controller: 'AllProjectsController'
-            })
-            .state('project', {
-                url: '/project/:projectId',
-                templateUrl: 'modules/projects/SingleProjectView.html',
-                controller: 'SingleProjectController'
-            });
-    });
 angular.module('caroline-website.ReadingModule', []);
-angular.module('caroline-website.SidebarModule', []);
 angular.module('caroline-website.footer-module', []);
 
 angular.module('caroline-website.hire-me-module', [])
@@ -49,6 +34,19 @@ angular.module('caroline-website.home-module', [])
     });
 
 angular.module('caroline-website.navigation-module', []);
+
+angular.module('caroline-website.project-module', [])
+  .config(function($stateProvider) {
+    $stateProvider
+      .state('allProjects', {
+        url: '/allProjects',
+        templateUrl: 'modules/projects/all-projects.html'
+      })
+      .state('project', {
+        url: '/project/:projectId',
+        templateUrl: 'modules/projects/single-project.html'
+      });
+  });
 
 (function() {
   function Controller($scope) {
@@ -100,7 +98,7 @@ angular.module('caroline-website.navigation-module', []);
 })();
 
 (function () {
-    function NavigationService($state) {
+    function Service($state) {
         this.goToHomePage = function() {
             $state.go('home');
         };
@@ -124,7 +122,7 @@ angular.module('caroline-website.navigation-module', []);
 
     angular
         .module('caroline-website.navigation-module')
-        .service('NavigationService', ['$state', NavigationService]);
+        .service('NavigationService', ['$state', Service]);
 })();
 
 (function() {
@@ -163,53 +161,8 @@ angular.module('caroline-website.navigation-module', []);
         .module('caroline-website.ProfessionalModule')
         .controller('ProfessionalController', ['$scope', 'NavigationService', ProfessionalController])
 })();
-(function() {
-    function AllProjectsController($scope, ProjectService, NavigationService) {
-        $scope.filterBy = function() {
-
-        };
-
-        $scope.filterBy = function(filterBy) {
-/*            angular.forEach($scope.filters, function(filter) {
-                filter.iSSelected = false;
-            });
-
-            filterBy.isSelected = true;
-            $scope.filterBy = filteryBy.name;
-            console.info($scope.filterBy);
-
-            angular.forEach($scope.allProjects, function(project) {
-                angular.forEach(project.tags, function(tag) {
-                    if (tag == $scope.filterBy) {
-                        project.isShowing = true;
-                    }
-                });
-            });*/
-        };
-
-        $scope.goToProjectPage = function(project) {
-            NavigationService.goToSingleProjectPage(project.id);
-        };
-
-        function load() {
-            $scope.filters = ProjectService.getProjectFilters();
-            $scope.allProjects = ProjectService.getAllProjects();
-            $scope.filterBy = "All";
-
-            angular.forEach($scope.allProjects, function(project) {
-                project.isShowing = true;
-            })
-        }
-
-        load();
-    }
-
-    angular
-        .module('caroline-website.ProjectModule')
-        .controller('AllProjectsController', ['$scope', 'ProjectService', 'NavigationService', AllProjectsController])
-})();
 (function () {
-    function ProjectService() {
+    function Service() {
         this.projectImageDirectory = "resources/images/projects/";
 
         this.getProjectWithId = function(projectId) {
@@ -277,7 +230,7 @@ angular.module('caroline-website.navigation-module', []);
                         "How to deploy a web application using a hosting website",
                         "Writing an entire website full of information about yourself is harder than it sounds"],
                     tags: ["software"]
-                }/*,
+                },
                  {
                  id: 2,
                  name: "Hiking",
@@ -348,7 +301,7 @@ angular.module('caroline-website.navigation-module', []);
                  }
                  ],
                  tags: ["health", "exercise", "hiking", "kuliouou"]
-                 }
+               },
                  {
                  id: 11111111,
                  name: "Wedding Cake",
@@ -363,8 +316,8 @@ angular.module('caroline-website.navigation-module', []);
                  challenges: "It was difficult to get all of the stripes lined up.",
                  thingsLearned: "Thai silk is super delicate and it WILL get threads all over your house, no matter how hard you try.",
                  tags: ["crafts", "sewing", "home"]
-                 }*/
-                /*
+               },
+
                 {
                  id: 3,
                  name: "D3 Charting",
@@ -377,8 +330,7 @@ angular.module('caroline-website.navigation-module', []);
                  githubUrl: "https://github.com/carolinepaulic/D3Charting",
                  goals: [
                  {
-                 name: "Learn how to use D3.js to build simple graphs such as bar charts, line graphs,
-                 scatter plots, and pie charts.",
+                 name: "Learn how to use D3.js to build simple graphs such as bar charts, line graphs, scatter plots, and pie charts.",
                  complete: false
                  },
                  {
@@ -401,8 +353,8 @@ angular.module('caroline-website.navigation-module', []);
                  challenges: "None yet!",
                  thingsLearned: ["Nothing yet :("],
                  tags: ["software"]
-                 }*/
-            ]
+                 }
+            ];
         };
 
         this.getProjectFilters = function() {
@@ -438,42 +390,14 @@ angular.module('caroline-website.navigation-module', []);
                     isSelected: false
                 }
             ];
-        }
+        };
     }
 
     angular
-        .module('caroline-website.ProjectModule')
-        .service('ProjectService', [ProjectService]);
+        .module('caroline-website.project-module')
+        .service('ProjectService', [Service]);
 })();
-(function() {
-    function SingleProjectController($scope, $stateParams, ProjectService, NavigationService) {
-        $scope.filters = ProjectService.getProjectFilters();
-        $scope.allProjects = ProjectService.getAllProjects();
 
-        $scope.filterBy = function(filterBy) {
-            angular.forEach($scope.filters, function(filter) {
-                filter.iSSelected = false;
-            });
-
-            filterBy.isSelected = true;
-        };
-
-        $scope.goToProjectPage = function(project) {
-            NavigationService.goToSingleProjectPage(project.id);
-        };
-
-        function load() {
-            console.info($stateParams);
-            $scope.project = ProjectService.getProjectWithId($stateParams.projectId);
-        }
-
-        load();
-    }
-
-    angular
-        .module('caroline-website.ProjectModule')
-        .controller('SingleProjectController', ['$scope', '$stateParams', 'ProjectService', 'NavigationService', SingleProjectController])
-})();
 (function() {
     function CurrentlyReadingController($scope, ReadingService) {
         function getMostRecentBook() {
@@ -544,24 +468,6 @@ angular.module('caroline-website.navigation-module', []);
         .module('caroline-website.ReadingModule')
         .service('ReadingService', [ReadingService]);
 })();
-(function() {
-    function SidebarController($scope, NavigationService) {
-        $scope.goHome = function() {
-            NavigationService.goToHomePage();
-        };
-
-        $scope.goToAllProjectsPage = function() {
-            NavigationService.goToAllProjectsPage();
-        };
-
-        $scope.goToProfessionalPage = function() {
-            NavigationService.goToProfessionalPage();
-        }
-    }
-
-    angular.module('caroline-website.SidebarModule')
-        .controller('SidebarController', ['$scope', 'NavigationService', SidebarController]);
-})();
 angular.module('caroline-website',
     [
         'ui.router',
@@ -569,9 +475,8 @@ angular.module('caroline-website',
         'ngRoute',
         'caroline-website.hire-me-module',
         'caroline-website.navigation-module',
-        'caroline-website.SidebarModule',
         'caroline-website.home-module',
-        'caroline-website.ProjectModule',
+        'caroline-website.project-module',
         'caroline-website.ReadingModule',
         'caroline-website.ProfessionalModule',
         'caroline-website.footer-module'

@@ -1,5 +1,5 @@
 (function () {
-    function ProjectService() {
+    function Service() {
         this.projectImageDirectory = "resources/images/projects/";
 
         this.getProjectWithId = function(projectId) {
@@ -67,7 +67,7 @@
                         "How to deploy a web application using a hosting website",
                         "Writing an entire website full of information about yourself is harder than it sounds"],
                     tags: ["software"]
-                }/*,
+                },
                  {
                  id: 2,
                  name: "Hiking",
@@ -138,7 +138,7 @@
                  }
                  ],
                  tags: ["health", "exercise", "hiking", "kuliouou"]
-                 }
+               },
                  {
                  id: 11111111,
                  name: "Wedding Cake",
@@ -153,8 +153,8 @@
                  challenges: "It was difficult to get all of the stripes lined up.",
                  thingsLearned: "Thai silk is super delicate and it WILL get threads all over your house, no matter how hard you try.",
                  tags: ["crafts", "sewing", "home"]
-                 }*/
-                /*
+               },
+
                 {
                  id: 3,
                  name: "D3 Charting",
@@ -167,8 +167,7 @@
                  githubUrl: "https://github.com/carolinepaulic/D3Charting",
                  goals: [
                  {
-                 name: "Learn how to use D3.js to build simple graphs such as bar charts, line graphs,
-                 scatter plots, and pie charts.",
+                 name: "Learn how to use D3.js to build simple graphs such as bar charts, line graphs, scatter plots, and pie charts.",
                  complete: false
                  },
                  {
@@ -191,8 +190,8 @@
                  challenges: "None yet!",
                  thingsLearned: ["Nothing yet :("],
                  tags: ["software"]
-                 }*/
-            ]
+                 }
+            ];
         };
 
         this.getProjectFilters = function() {
@@ -228,10 +227,10 @@
                     isSelected: false
                 }
             ];
-        }
+        };
     }
 
     angular
-        .module('caroline-website.ProjectModule')
-        .service('ProjectService', [ProjectService]);
+        .module('caroline-website.project-module')
+        .service('ProjectService', [Service]);
 })();
