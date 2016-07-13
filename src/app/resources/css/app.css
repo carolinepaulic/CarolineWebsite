@@ -11,7 +11,7 @@ html {
   line-height: 1.3;
   font-size: 1.6em; }
 
-.clickable, .content a:hover, #nav .header-text a {
+.clickable, .content a:hover, .content a:active, #nav .header-text a {
   cursor: pointer; }
 
 ul {
@@ -33,7 +33,7 @@ ul {
     transition: color .4s; }
     .content a.subtle {
       color: #bbb; }
-    .content a:hover {
+    .content a:hover, .content a:active {
       color: #6FDC85;
       text-decoration: none; }
   .content p {
@@ -237,7 +237,7 @@ ul {
       font-size: 4.5rem;
       color: #6dc598;
       transition: color .4s; }
-      #nav .header-text a:hover {
+      #nav .header-text a:hover, #nav .header-text a:active {
         color: #6FDC85;
         text-decoration: none; }
   #nav .menu-item {
@@ -268,15 +268,15 @@ ul {
       #nav .menu-item a .fa, #nav .menu-item a .glyphicon {
         margin-right: .3rem;
         transition: color .4s; }
-    #nav .menu-item.green-hover a:hover {
+    #nav .menu-item.green-hover a:hover, #nav .menu-item.green-hover a:active, #nav .menu-item.green-hover a:focus {
       text-decoration: none;
       border-color: #6FDC85; }
-      #nav .menu-item.green-hover a:hover .fa, #nav .menu-item.green-hover a:hover .glyphicon {
+      #nav .menu-item.green-hover a:hover .fa, #nav .menu-item.green-hover a:hover .glyphicon, #nav .menu-item.green-hover a:active .fa, #nav .menu-item.green-hover a:active .glyphicon, #nav .menu-item.green-hover a:focus .fa, #nav .menu-item.green-hover a:focus .glyphicon {
         color: #6FDC85; }
-    #nav .menu-item.blue-hover a:hover {
+    #nav .menu-item.blue-hover a:hover, #nav .menu-item.blue-hover a:active, #nav .menu-item.blue-hover a:focus {
       text-decoration: none;
       border-color: #6ACCD2; }
-      #nav .menu-item.blue-hover a:hover .fa, #nav .menu-item.blue-hover a:hover .glyphicon {
+      #nav .menu-item.blue-hover a:hover .fa, #nav .menu-item.blue-hover a:hover .glyphicon, #nav .menu-item.blue-hover a:active .fa, #nav .menu-item.blue-hover a:active .glyphicon, #nav .menu-item.blue-hover a:focus .fa, #nav .menu-item.blue-hover a:focus .glyphicon {
         color: #6ACCD2; }
 
 #footer {
