@@ -15,9 +15,9 @@ a:hover, .clickable {
   cursor: pointer; }
 
 ul {
-  padding-left: 7px; }
+  padding-left: 1.5rem; }
   ul li {
-    margin-bottom: .7rem; }
+    margin-bottom: 1rem; }
 
 .content {
   max-width: 900px;
@@ -35,8 +35,11 @@ ul {
 
 .content .subtitle, .content * .subtitle {
   font-size: 2.5em;
-  margin-bottom: 4rem;
+  margin-bottom: .5rem;
   text-align: center; }
+
+.content .section-spacer {
+  margin-top: 4rem; }
 
 .content * .emphasis {
   color: #74D26A; }

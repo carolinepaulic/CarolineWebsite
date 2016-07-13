@@ -15,9 +15,9 @@ a:hover, .clickable {
 }
 
 ul {
-  padding-left: 7px;
+  padding-left: 1.5rem;
   li {
-    margin-bottom: .7rem;
+    margin-bottom: 1rem;
   }
 }
 
@@ -40,8 +40,12 @@ ul {
     @extend .chalkboard-font;
   //  @extend h3;
     font-size: 2.5em;
-    margin-bottom: 4rem;
+    margin-bottom: .5rem;
     text-align: center;
+  }
+
+  .section-spacer {
+    margin-top: 4rem;
   }
 
   * .emphasis {
