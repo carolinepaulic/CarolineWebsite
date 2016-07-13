@@ -13,7 +13,6 @@
   }
 
   .header-text {
-    //@extend h1;
     margin-bottom: 1rem;
 
     @include media($small) {
@@ -28,7 +27,7 @@
       @extend .cursive-font;
       font-size: 4.5rem;
       color: $color-green;
-      transition: color .4s;
+      transition: color $transition-speed-color;
 
       &:hover, &:active, &:focus {
         color: $color-bright-green;
@@ -70,18 +69,16 @@
       margin: 1rem 3%;
     }
 
-
-
     a {
       font-size: 1.7rem;
       color: $color-white;
-      transition: border-color .4s;
+      transition: border-color $transition-speed-color;
       padding-bottom: .3rem;
       border-bottom: 1px solid $color-dark-charcoal;
 
       .fa, .glyphicon {
         margin-right: .3rem;
-        transition: color .4s;
+        transition: color $transition-speed-color;
       }
     }
 

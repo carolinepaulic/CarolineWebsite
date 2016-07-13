@@ -1,13 +1,9 @@
-/* Body */
 #body {
   @extend .normal-sans-serif;
   background-color: $color-charcoal;
   color: $color-white;
   line-height: 1.3;
   font-size: 1.6em;
-}
-
-h1, h2, h3, h4, h5, h6 {
 }
 
 .clickable {
@@ -21,13 +17,14 @@ ul {
   }
 }
 
+
 .content {
   @include outer-container(900px);
   padding: 1.5rem;
 
   a {
     color: $color-green;
-    transition: color .4s;
+    transition: color $transition-speed-color;
 
     &.subtle {
       color: $color-light-grey;
@@ -98,31 +95,7 @@ ul {
   .section-spacer {
     margin-top: 3rem;
   }
-
-  * .emphasis {
-    color: $color-bright-green;
-
-    &.blue {
-      color: $color-blue;
-    }
-
-    &.pink {
-      color: $color-pink;
-    }
-  }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 #joseph-image {
   text-align: center;
@@ -137,30 +110,4 @@ ul {
     border: 4px solid $color-dark-charcoal;
     border-radius: 5px;
   }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-//Old
-
-
-
-.reading .carousel-indicators {
-    display: none;
-}
-
-.reading .carousel-control.left, .reading .carousel-control.right {
-    background-image: none;
-    color: #737373;
-    bottom: auto;
-    top: 70px;
 }

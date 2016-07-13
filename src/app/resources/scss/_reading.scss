@@ -1,0 +1,12 @@
+.reading {
+  .carousel-indicators {
+    display: none;
+  }
+
+  .carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: #737373;
+    bottom: auto;
+    top: 70px;
+  }
+}
