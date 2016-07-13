@@ -1,21 +1,39 @@
 #nav {
   text-align: center;
-  padding: 2rem;
-  margin-bottom: 3rem;
-  border-bottom: 1px solid $color-white;
+  padding: 2rem 2rem 1rem 2rem;
+  margin-bottom: 2rem;
+  background-color: $color-dark-charcoal;
+
+  @include media($small) {
+    margin-bottom: 0;
+    padding-bottom: 2rem;
+  }
+  @include media($medium) {
+    padding-bottom: 2rem;
+  }
 
   .header-text {
     //@extend h1;
-    @extend .cursive-font;
-    font-size: 4rem;
-    margin-bottom: 2rem;
-    color: $color-green;
+    margin-bottom: 1rem;
 
     @include media($small) {
       text-align: left;
     }
     @include media($medium) {
       text-align: left;
+    }
+
+    a {
+      @extend .clickable;
+      @extend .cursive-font;
+      font-size: 4.5rem;
+      color: $color-green;
+      transition: color .4s;
+
+      &:hover {
+        color: $color-bright-green;
+        text-decoration: none;
+      }
     }
   }
 
@@ -59,7 +77,7 @@
       color: $color-white;
       transition: border-color .4s;
       padding-bottom: .3rem;
-      border-bottom: 1px solid $color-charcoal;
+      border-bottom: 1px solid $color-dark-charcoal;
 
       .fa, .glyphicon {
         margin-right: .3rem;
