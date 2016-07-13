@@ -173,26 +173,49 @@ ul {
     font-size: 4rem;
     margin-bottom: 2rem;
     color: #6dc598; }
-  #nav .contact {
-    display: inline-block;
-    margin: 1rem 4rem; }
-    #nav .contact a {
+    @media screen and (max-width: 450px) {
+      #nav .header-text {
+        text-align: left; } }
+    @media screen and (min-width: 451px) and (max-width: 768px) {
+      #nav .header-text {
+        text-align: left; } }
+  #nav .menu-item {
+    display: inline-block; }
+    @media screen and (max-width: 450px) {
+      #nav .menu-item {
+        margin: 1.5rem 0;
+        display: block;
+        text-align: left; }
+        #nav .menu-item.last {
+          margin-bottom: 0; } }
+    @media screen and (min-width: 451px) and (max-width: 768px) {
+      #nav .menu-item {
+        margin: 1.5rem 0;
+        display: block;
+        text-align: left; }
+        #nav .menu-item.last {
+          margin-bottom: 0; } }
+    @media screen and (min-width: 769px) {
+      #nav .menu-item {
+        margin: 1rem 3%; } }
+    #nav .menu-item a {
       font-size: 1.7rem;
       color: #fff;
       transition: border-color .4s;
       padding-bottom: .3rem;
       border-bottom: 1px solid #343434; }
-      #nav .contact a .fa, #nav .contact a .glyphicon {
+      #nav .menu-item a .fa, #nav .menu-item a .glyphicon {
+        margin-right: .3rem;
         transition: color .4s; }
-    #nav .contact.green-hover a:hover {
+    #nav .menu-item.green-hover a:hover {
       text-decoration: none;
       border-color: #74D26A; }
-      #nav .contact.green-hover a:hover .fa, #nav .contact.green-hover a:hover .glyphicon {
+      #nav .menu-item.green-hover a:hover .fa, #nav .menu-item.green-hover a:hover .glyphicon {
         color: #74D26A; }
-    #nav .contact.blue-hover a:hover {
+    #nav .menu-item.blue-hover a:hover {
       text-decoration: none;
       border-color: #6ACCD2; }
-      #nav .contact.blue-hover a:hover .fa, #nav .contact.blue-hover a:hover .glyphicon {
+      #nav .menu-item.blue-hover a:hover .fa, #nav .menu-item.blue-hover a:hover .glyphicon {
         color: #6ACCD2; }
 
 #footer {
