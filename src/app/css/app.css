@@ -11,6 +11,11 @@ body {
     padding: 0;
 }
 
+a {
+    color: #9fe5cf;
+    text-decoration: none;
+}
+
 .content {
     height: 100%;
     overflow: hidden;
@@ -20,4 +25,8 @@ body {
     position: relative;
     top: 30%;
     text-align: center;
+}
+
+.separator {
+    color: #fff;
 }
