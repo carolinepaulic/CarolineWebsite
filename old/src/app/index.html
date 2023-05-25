@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html data-ng-app="caroline-website">
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- External JS Resources -->
+    <!-- build:js resources/js/angular/angular.min.js -->
+    <script src="../../bower_components/angular/angular.js"></script>
+    <!-- /build -->
+    <!-- build:js resources/js/angular-route/angular-route.min.js -->
+    <script src="../../bower_components/angular-route/angular-route.js"></script>
+    <!-- /build -->
+    <!-- build:js resources/js/angular-bootstrap/ui-bootstrap-tpls.min.js -->
+    <script src="../../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <!-- /build -->
+    <!-- build:js resources/js/ui-router/release/angular-ui-router.min.js -->
+    <script src="../../bower_components/ui-router/release/angular-ui-router.min.js"></script>
+    <!-- /build -->
+    <!-- build:remove:prod -->
+    <script src="//localhost:35729/livereload.js"></script>
+    <!-- /build -->
+
+
+    <!-- My JS Resources -->
+    <!-- build:js caroline-website.min.js -->
+    <script src="caroline-website.js"></script>
+    <!-- /build -->
+
+    <!-- CSS -->
+    <!-- build:css resources/css/app.min.css -->
+    <link href="resources/css/app.css" rel="stylesheet" type="text/css">
+    <!-- /build -->
+    <!-- build:css resources/css/bootstrap.min.css -->
+    <link href="resources/css/bootstrap.css" rel="stylesheet">
+    <!-- /build -->
+    <!-- build:css resources/css/font-awesome.min.css -->
+    <link href="resources/css/font-awesome.min.css" rel="stylesheet">
+    <!-- /build -->
+    <link href='http://fonts.googleapis.com/css?family=Handlee|Pacifico|Lora' rel='stylesheet' type='text/css'>
+</head>
+<body id="body">
+    <div data-navigation></div>
+    <div data-ui-view class="content"></div>
+    <div data-ng-include data-src="'modules/footer/Footer.html'" data-ng-controller="FooterController"></div>
+</body>
+</html>

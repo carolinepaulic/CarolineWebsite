@@ -1,0 +1,43 @@
+{
+  "name": "caroline-website",
+  "version": "1.0.0",
+  "description": "My personal website",
+  "main": "app.js",
+  "dependencies": {
+    "bower": "^1.4.1",
+    "grunt": "^0.4.5"
+  },
+  "devDependencies": {
+    "del": "^1.2.1",
+    "express": "^4.13.3",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-livereload": "^3.8.0",
+    "gulp-ng-annotate": "^1.1.0",
+    "gulp-ngmin": "^0.3.0",
+    "gulp-processhtml": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^1.2.0",
+    "gulp-webserver": "^0.9.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "postinstall": "bower install && gulp prod"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carolinepaulic/CarolineWebsite.git"
+  },
+  "keywords": [
+    "website"
+  ],
+  "author": "Caroline Paulic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/carolinepaulic/CarolineWebsite/issues"
+  },
+  "homepage": "https://github.com/carolinepaulic/CarolineWebsite#readme"
+}
